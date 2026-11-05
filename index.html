@@ -1,0 +1,2323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App Auditoría ASC</title>
+  <script>
+window.__EMBEDDED_CONTROLS__ = [
+  {
+    "code": "A1",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Coordinador ESD: Designación formal de un responsable para la implementación y supervisión del programa ESD."
+  },
+  {
+    "code": "A2",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Plan de Formación: Programa de formación continua para personal que manipula ESDS, con registros individuales de capacitación."
+  },
+  {
+    "code": "A3",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Plan de Verificación: Plan de auditorías internas periódicas para asegurar el cumplimiento del programa ESD."
+  },
+  {
+    "code": "A4",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Señalización del EPA: Área de Protección Electrostática (EPA) claramente definida, delimitada y señalizada."
+  },
+  {
+    "code": "A5",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Acceso Controlado al EPA: Acceso restringido exclusivamente a personal capacitado y con equipamiento adecuado."
+  },
+  {
+    "code": "A6",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Piso ESD: El centro cuenta con piso con propiedades de disipación electrostática (ESD) operativo."
+  },
+  {
+    "code": "A7",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Vestimenta ESD: Uso de batas conductivas según norma ANSI/ESD S20.20 (Prenda conectable a tierra: < 3.5 x 10⁷ Ω)."
+  },
+  {
+    "code": "A8",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Sistema de Muñequera: Uso de muñequera según normas ANSI/ESD S1.1 e IEC 61340-5-1 (Resistencia: < 35 MΩ)."
+  },
+  {
+    "code": "A9",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Frecuencia de Verificación: Verificación y registro diaria de muñequeras ESD al inicio de cada turno."
+  },
+  {
+    "code": "A10",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Uso Constante de Conexión a Tierra: Todo el personal permanece conectado a tierra dentro del EPA."
+  },
+  {
+    "code": "A11",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Manipulación de Componentes: Sujeción de componentes por los bordes para evitar contacto directo con los circuitos."
+  },
+  {
+    "code": "A12",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Herramientas ESD: Uso exclusivo de herramientas ESD certificados como seguros para ESD dentro del EPA."
+  },
+  {
+    "code": "A13",
+    "line": "MX",
+    "category": "Control ESD",
+    "question": "Almacenamiento Antiestático: Almacenamiento, embalajes de repuestos y componentes bajo condiciones y empaques normativos ESD."
+  },
+  {
+    "code": "B1.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Atención al Cliente: Recepción y trato cordial, empático y profesional al cliente."
+  },
+  {
+    "code": "B1.2",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Registro en GSPN: Registro correcto, completo y oportuno de la información del servicio en la plataforma GSPN."
+  },
+  {
+    "code": "B1.3",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "IQC (Control de Calidad de Entrada): Entrevista al cliente sobre la falla y ejecución de pruebas iniciales de diagnóstico."
+  },
+  {
+    "code": "B1.4",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Información de Garantía y Proceso: Explicación clara al cliente sobre las condiciones de garantía y las etapas de reparación."
+  },
+  {
+    "code": "B1.5",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Modo Mantenimiento: Activación del modo de Mantenimiento en el dispositivo y explicación de su función al cliente."
+  },
+  {
+    "code": "B1.6",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Inspección Visual: Inspección estética y física detallada del dispositivo registrando el estado de recepción."
+  },
+  {
+    "code": "B1.7",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Proceso InSS (In Shop Service): Cumple con el proceso, tienen Fenrir y GD funcionando. Lo aplican."
+  },
+  {
+    "code": "B1.8",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Orden en Áreas de Recepción/Entrega: Limpieza, orden y organización en las zonas de recepción y entrega de equipos."
+  },
+  {
+    "code": "B2.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Diagnóstico de Entrada (IQC): Ejecución rigurosa del diagnóstico técnico inicial bajo protocolo."
+  },
+  {
+    "code": "B2.2",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Evidencias de Falla: Pruebas y evidencias multimedia recopiladas que justifican el diagnóstico técnico según el caso."
+  },
+  {
+    "code": "B2.3",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Precisión de Registros: Claridad y exactitud en la descripción del síntoma reportado y de la reparación ejecutada."
+  },
+  {
+    "code": "B2.4",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Controles Técnicos Aplicados: Ejecución de pruebas críticas requeridas (ej. medición de consumo de corriente, prueba de estanqueidad IP)."
+  },
+  {
+    "code": "B2.5",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Inspección y Diagnóstico: Inspección visual exhaustiva y diagnóstico lógico coherente con la falla."
+  },
+  {
+    "code": "B3.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Optimización de Cotización: Selección exacta de repuestos requeridos para la reparación, evitando solicitudes redundantes o cobro de reparaciones informadas como IW."
+  },
+  {
+    "code": "B4.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Uso de Herramientas: Empleo correcto y seguro de las herramientas específicas aprobadas para cada proceso."
+  },
+  {
+    "code": "B4.2",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Proceso de Desensamble: Desarmado del dispositivo conforme a las guías de servicio oficiales de la marca."
+  },
+  {
+    "code": "B4.3",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Orden en Estación de Trabajo: Limpieza y organización de la mesa de trabajo antes, durante y después del servicio."
+  },
+  {
+    "code": "B5.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "OQC (Control de Calidad de Salida): Ejecución rigurosa de los protocolos de prueba finales para asegurar la reparación completa."
+  },
+  {
+    "code": "B5.2",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Calibración del Dispositivo: Ejecución correcta de los procesos de calibración por software/hardware requeridos tras la reparación."
+  },
+  {
+    "code": "B5.3",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Limpieza de Entrega: Presentación estética final y limpieza óptima del dispositivo al momento de entregarlo al usuario."
+  },
+  {
+    "code": "B5.4",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Registro de Rechazos (OQC Fail): Registro estructurado de los fallas detectadas en la inspección de salida para análisis de re-trabajo."
+  },
+  {
+    "code": "B6.1",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Tiempos de Cierre de OT: Cierre administrativo y técnico de la Orden de Trabajo dentro del SLA establecido."
+  },
+  {
+    "code": "B6.2",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Explicación del Servicio Realizado: Comunicación clara al cliente de las reparaciones realizadas y piezas reemplazadas."
+  },
+  {
+    "code": "B6.3",
+    "line": "MX",
+    "category": "Proceso de Reparación",
+    "question": "Atención a Consultas: Apertura y disposición para resolver dudas o consultas finales del cliente."
+  },
+  {
+    "code": "C1",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas Oficiales: Disponibilidad y uso exclusivo del kit de herramientas aprobado por la marca en el centro de servicio (ASC)."
+  },
+  {
+    "code": "C2",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Mantenimiento de Herramientas: Limpieza, conservación y calibración periódica de las herramientas para garantizar su buen estado."
+  },
+  {
+    "code": "C3",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "AOD: Temperatura de operación configurada y controlada según las especificaciones del manual de servicio."
+  },
+  {
+    "code": "C4",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas de Apertura Segura: Uso de espátulas plásticas u otras herramientas seguras para prevenir daños estéticos en biseles o tapas."
+  },
+  {
+    "code": "C5",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Prensas y Sellado: Empleo de prensas y soportes homologados para asegurar la correcta adhesión y sellado de pantallas."
+  },
+  {
+    "code": "C6",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas Prohibidas: Ausencia total de herramientas no autorizadas o hechizas que puedan dañar los productos."
+  },
+  {
+    "code": "C7",
+    "line": "MX",
+    "category": "Herramientas y Equipamiento",
+    "question": "Cuentas Fenrir: Registro, vigencia y correcto funcionamiento de las credenciales de acceso a la plataforma Fenrir."
+  },
+  {
+    "code": "D1",
+    "line": "MX",
+    "category": "Orden y lipieza - 5S",
+    "question": "Etiquetado en Estación de Trabajo: Identificación y etiquetado claro de todas las partes y componentes en el banco de trabajo durante la auditoría."
+  },
+  {
+    "code": "D2",
+    "line": "MX",
+    "category": "Orden y lipieza - 5S",
+    "question": "Higiene del Laboratorio: Mantenimiento del orden, limpieza y condiciones óptimas de trabajo en el laboratorio de servicio técnico."
+  },
+  {
+    "code": "D3",
+    "line": "MX",
+    "category": "Orden y lipieza - 5S",
+    "question": "Auditoría de Envíos (RMA): Validación de una muestra de envíos para confirmar consistencia e integridad de la documentación de partes devueltas."
+  },
+  {
+    "code": "D4",
+    "line": "MX",
+    "category": "Orden y lipieza - 5S",
+    "question": "Auditoría de Retorno de Partes: Retorno físico de partes usadas dentro del plazo de garantía (comparación de cierre de OT vs. manifiesto de envío)."
+  },
+  {
+    "code": "D5",
+    "line": "MX",
+    "category": "Orden y lipieza - 5S",
+    "question": "Clasificación de Partes: Almacenamiento estructurado de las partes usadas organizadas cronológicamente por su fecha de remoción."
+  },
+  {
+    "code": "E1",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI IQC: Conocimiento y cumplimiento de la meta de calidad de entrada (IQC) por parte del staff técnico."
+  },
+  {
+    "code": "E2",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI MP (Multiples partes): Monitoreo del objetivo del uso de Multiples partes y apropiación del indicador por los técnicos."
+  },
+  {
+    "code": "E3",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO (Re-trabajo): Conocimiento técnico de los objetivos de re-trabajo y metas de reducción de fallas repetidas."
+  },
+  {
+    "code": "E4",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO30: Alineación del equipo técnico con los objetivos de control de fallas repetidas dentro de los 30 días."
+  },
+  {
+    "code": "E5",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO SSR: Nivel de apropiación y cumplimiento del indicador REDO SSR (Same Symptom Repeat)."
+  },
+  {
+    "code": "E6",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI GM: Conocimiento y cumplimiento por parte del taller de las métricas de gestión generales (GM)."
+  },
+  {
+    "code": "E7",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI RNPS (Recomendación NPS): Conocimiento y enfoque de los técnicos en el cumplimiento del objetivo de satisfacción del cliente (NPS)."
+  },
+  {
+    "code": "E8",
+    "line": "MX",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Registro de la descripción de Reparación y Defectos: Redacción del diagnóstico y acciones técnicas conforme al estándar de calidad exigido."
+  },
+  {
+    "code": "F1",
+    "line": "MX",
+    "category": "Competencias y Documentación",
+    "question": "Plan de Capacitación Activo: Asignación de certificación RA y avance correspondiente en los entrenamientos técnicos."
+  },
+  {
+    "code": "F2",
+    "line": "MX",
+    "category": "Competencias y Documentación",
+    "question": "Descarga y lectura de ESI (GSPN): Disponibilidad de los comunicados del año y conocimiento de los últimos comnicados (ESI) publicados en GSPN."
+  },
+  {
+    "code": "F3",
+    "line": "MX",
+    "category": "Competencias y Documentación",
+    "question": "Manuales de Servicio Actualizados: Disponibilidad física o digital de los manuales de servicio de todos los modelos lanzados en los últimos 12 meses."
+  },
+  {
+    "code": "F4",
+    "line": "MX",
+    "category": "Competencias y Documentación",
+    "question": "Asistencia a Entrenamientos: Participación activa de la plantilla técnica en el plan anual de capacitaciones de la marca."
+  },
+  {
+    "code": "G1",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Seguridad en Almacén: Restricción de acceso físico y control del personal no autorizado al área de almacenamiento de repuestos."
+  },
+  {
+    "code": "G2",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Partes Nuevas: Disposición y orden de repuestos nuevos asegurando su conservación óptima y protección ESD."
+  },
+  {
+    "code": "G3",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Partes Usadas: Segregación, orden y control de repuestos usados a la espera de devolución o disposición."
+  },
+  {
+    "code": "G4",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Embalaje para Retorno: Uso de empaques protectores estandarizados para el envío seguro de partes de devolución a la central."
+  },
+  {
+    "code": "G5",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Documentación de Despacho: Control, archivo y coincidencia de las guías de despacho físicas frente al registro de sistema."
+  },
+  {
+    "code": "G6",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Tiempos de Devolución: Monitoreo del cumplimiento de los plazos reglamentarios para el retorno de componentes."
+  },
+  {
+    "code": "G7",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Devolución Total de Partes: Retorno del 100% de las piezas de scrap y reemplazos (operaciones Out of Warranty / Local Purchase)."
+  },
+  {
+    "code": "G8",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Control de Inventario de Usados: Ausencia de componentes usados retenidos en el taller fuera de la zona autorizada de tránsito de RMA."
+  },
+  {
+    "code": "G9",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Inutilización de Baterías: Verificación de corte físico del cable flexible (flex) en baterías extraídas para evitar su reutilización."
+  },
+  {
+    "code": "G10",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Seguridad en Manejo de Baterías: Cumplimiento de los protocolos de seguridad y manipulación segura para evitar cortocircuitos o incendios con las baterías."
+  },
+  {
+    "code": "G11",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Baterías Usadas: Cumplimiento de los protocolos de almacenamiento y manipulación segura para evitar cortocircuitos o incendios.."
+  },
+  {
+    "code": "G12",
+    "line": "MX",
+    "category": "Gestion de Partes",
+    "question": "Frecuencia de Inventario: Periodicidad de la conciliación física de stock contra el inventario registrado en el sistema ERP."
+  },
+  {
+    "code": "H1",
+    "line": "MX",
+    "category": "ECO Repair",
+    "question": "Disponibilidad de Herramientas: Presencia total del herramental de diagnóstico y desarme obligatorio según listado de la marca."
+  },
+  {
+    "code": "H2",
+    "line": "MX",
+    "category": "ECO Repair",
+    "question": "Mantenimiento C20: Limpieza y mantenimiento del herramental de apertura automática C20 siguiendo el cronograma del fabricante."
+  },
+  {
+    "code": "H3",
+    "line": "MX",
+    "category": "ECO Repair",
+    "question": "Alcance de Reparaciones: Capacidad y habilitación operativa del taller para atender servicios tanto dentro (IW) como fuera de garantía (OW)."
+  },
+  {
+    "code": "H4",
+    "line": "MX",
+    "category": "ECO Repair",
+    "question": "Polivalencia en Eco Repair: Disponibilidad de múltiples técnicos certificados en la metodología de reparación sustentable (Eco Repair)."
+  },
+  {
+    "code": "H5",
+    "line": "MX",
+    "category": "ECO Repair",
+    "question": "Control de Consumibles: Registro obligatorio de la fecha de apertura en jeringas de adhesivos, resinas o pastas térmicas para control de vida útil."
+  },
+  {
+    "code": "A1",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Coordinador ESD: Designación formal de un responsable para la implementación y supervisión del programa ESD."
+  },
+  {
+    "code": "A2",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Plan de Formación: Programa de formación continua para personal que manipula ESDS, con registros individuales de capacitación."
+  },
+  {
+    "code": "A3",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Plan de Verificación: Plan de auditorías internas periódicas para asegurar el cumplimiento del programa ESD."
+  },
+  {
+    "code": "A4",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Señalización del EPA: Área de Protección Electrostática (EPA) claramente definida, delimitada y señalizada."
+  },
+  {
+    "code": "A5",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Acceso Controlado al EPA: Acceso restringido exclusivamente a personal capacitado y con equipamiento adecuado."
+  },
+  {
+    "code": "A6",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Piso ESD: El centro cuenta con piso con propiedades de disipación electrostática (ESD) operativo."
+  },
+  {
+    "code": "A7",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Vestimenta ESD: Uso de batas conductivas según norma ANSI/ESD S20.20 (Prenda conectable a tierra: < 3.5 x 10⁷ Ω)."
+  },
+  {
+    "code": "A8",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Sistema de Muñequera: Uso de muñequera según normas ANSI/ESD S1.1 e IEC 61340-5-1 (Resistencia: < 35 MΩ)."
+  },
+  {
+    "code": "A9",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Frecuencia de Verificación: Verificación y registro diaria de muñequeras ESD al inicio de cada turno."
+  },
+  {
+    "code": "A10",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Uso Constante de Conexión a Tierra: Todo el personal permanece conectado a tierra dentro del EPA."
+  },
+  {
+    "code": "A11",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Manipulación de Componentes: Sujeción de componentes por los bordes para evitar contacto directo con los circuitos."
+  },
+  {
+    "code": "A12",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Herramientas ESD: Uso exclusivo de herramientas ESD certificados como seguros para ESD dentro del EPA."
+  },
+  {
+    "code": "A13",
+    "line": "CE",
+    "category": "Control ESD",
+    "question": "Almacenamiento Antiestático: Almacenamiento, embalajes de repuestos y componentes bajo condiciones y empaques normativos ESD."
+  },
+  {
+    "code": "B1.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Atención al Cliente: Recepción y trato cordial, empático y profesional al cliente."
+  },
+  {
+    "code": "B1.2",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Registro en GSPN: Registro correcto, completo y oportuno de la información del servicio en la plataforma GSPN."
+  },
+  {
+    "code": "B1.3",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "IQC (Control de Calidad de Entrada): Entrevista al cliente sobre la falla y ejecución de pruebas iniciales de diagnóstico."
+  },
+  {
+    "code": "B1.4",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Información de Garantía y Proceso: Explicación clara al cliente sobre las condiciones de garantía y las etapas de reparación."
+  },
+  {
+    "code": "B1.5",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Modo Mantenimiento: Activación del modo de Mantenimiento en el dispositivo y explicación de su función al cliente."
+  },
+  {
+    "code": "B1.6",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Inspección Visual: Inspección estética y física detallada del dispositivo registrando el estado de recepción."
+  },
+  {
+    "code": "B1.7",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Proceso InSS (In Shop Service): Cumple con el proceso, tienen Fenrir y GD funcionando. Lo aplican."
+  },
+  {
+    "code": "B1.8",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Orden en Áreas de Recepción/Entrega: Limpieza, orden y organización en las zonas de recepción y entrega de equipos."
+  },
+  {
+    "code": "B2.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Diagnóstico de Entrada (IQC): Ejecución rigurosa del diagnóstico técnico inicial bajo protocolo."
+  },
+  {
+    "code": "B2.2",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Evidencias de Falla: Pruebas y evidencias multimedia recopiladas que justifican el diagnóstico técnico según el caso."
+  },
+  {
+    "code": "B2.3",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Precisión de Registros: Claridad y exactitud en la descripción del síntoma reportado y de la reparación ejecutada."
+  },
+  {
+    "code": "B2.4",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Controles Técnicos Aplicados: Ejecución de pruebas críticas requeridas (ej. medición de consumo de corriente, prueba de estanqueidad IP)."
+  },
+  {
+    "code": "B2.5",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Inspección y Diagnóstico: Inspección visual exhaustiva y diagnóstico lógico coherente con la falla."
+  },
+  {
+    "code": "B3.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Optimización de Cotización: Selección exacta de repuestos requeridos para la reparación, evitando solicitudes redundantes o cobro de reparaciones informadas como IW."
+  },
+  {
+    "code": "B4.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Uso de Herramientas: Empleo correcto y seguro de las herramientas específicas aprobadas para cada proceso."
+  },
+  {
+    "code": "B4.2",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Proceso de Desensamble: Desarmado del dispositivo conforme a las guías de servicio oficiales de la marca."
+  },
+  {
+    "code": "B4.3",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Orden en Estación de Trabajo: Limpieza y organización de la mesa de trabajo antes, durante y después del servicio."
+  },
+  {
+    "code": "B5.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "OQC (Control de Calidad de Salida): Ejecución rigurosa de los protocolos de prueba finales para asegurar la reparación completa."
+  },
+  {
+    "code": "B5.2",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Calibración del Dispositivo: Ejecución correcta de los procesos de calibración por software/hardware requeridos tras la reparación."
+  },
+  {
+    "code": "B5.3",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Limpieza de Entrega: Presentación estética final y limpieza óptima del dispositivo al momento de entregarlo al usuario."
+  },
+  {
+    "code": "B5.4",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Registro de Rechazos (OQC Fail): Registro estructurado de los fallas detectadas en la inspección de salida para análisis de re-trabajo."
+  },
+  {
+    "code": "B6.1",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Tiempos de Cierre de OT: Cierre administrativo y técnico de la Orden de Trabajo dentro del SLA establecido."
+  },
+  {
+    "code": "B6.2",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Explicación del Servicio Realizado: Comunicación clara al cliente de las reparaciones realizadas y piezas reemplazadas."
+  },
+  {
+    "code": "B6.3",
+    "line": "CE",
+    "category": "Proceso de Reparación",
+    "question": "Atención a Consultas: Apertura y disposición para resolver dudas o consultas finales del cliente."
+  },
+  {
+    "code": "C1",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas Oficiales: Disponibilidad y uso exclusivo del kit de herramientas aprobado por la marca en el centro de servicio (ASC)."
+  },
+  {
+    "code": "C2",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Mantenimiento de Herramientas: Limpieza, conservación y calibración periódica de las herramientas para garantizar su buen estado."
+  },
+  {
+    "code": "C3",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "AOD: Temperatura de operación configurada y controlada según las especificaciones del manual de servicio."
+  },
+  {
+    "code": "C4",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas de Apertura Segura: Uso de espátulas plásticas u otras herramientas seguras para prevenir daños estéticos en biseles o tapas."
+  },
+  {
+    "code": "C5",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Prensas y Sellado: Empleo de prensas y soportes homologados para asegurar la correcta adhesión y sellado de pantallas."
+  },
+  {
+    "code": "C6",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Herramientas Prohibidas: Ausencia total de herramientas no autorizadas o hechizas que puedan dañar los productos."
+  },
+  {
+    "code": "C7",
+    "line": "CE",
+    "category": "Herramientas y Equipamiento",
+    "question": "Cuentas Fenrir: Registro, vigencia y correcto funcionamiento de las credenciales de acceso a la plataforma Fenrir."
+  },
+  {
+    "code": "D1",
+    "line": "CE",
+    "category": "Orden y lipieza - 5S",
+    "question": "Etiquetado en Estación de Trabajo: Identificación y etiquetado claro de todas las partes y componentes en el banco de trabajo durante la auditoría."
+  },
+  {
+    "code": "D2",
+    "line": "CE",
+    "category": "Orden y lipieza - 5S",
+    "question": "Higiene del Laboratorio: Mantenimiento del orden, limpieza y condiciones óptimas de trabajo en el laboratorio de servicio técnico."
+  },
+  {
+    "code": "D3",
+    "line": "CE",
+    "category": "Orden y lipieza - 5S",
+    "question": "Auditoría de Envíos (RMA): Validación de una muestra de envíos para confirmar consistencia e integridad de la documentación de partes devueltas."
+  },
+  {
+    "code": "D4",
+    "line": "CE",
+    "category": "Orden y lipieza - 5S",
+    "question": "Auditoría de Retorno de Partes: Retorno físico de partes usadas dentro del plazo de garantía (comparación de cierre de OT vs. manifiesto de envío)."
+  },
+  {
+    "code": "D5",
+    "line": "CE",
+    "category": "Orden y lipieza - 5S",
+    "question": "Clasificación de Partes: Almacenamiento estructurado de las partes usadas organizadas cronológicamente por su fecha de remoción."
+  },
+  {
+    "code": "E1",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI IQC: Conocimiento y cumplimiento de la meta de calidad de entrada (IQC) por parte del staff técnico."
+  },
+  {
+    "code": "E2",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI MP (Multiples partes): Monitoreo del objetivo del uso de Multiples partes y apropiación del indicador por los técnicos."
+  },
+  {
+    "code": "E3",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO (Re-trabajo): Conocimiento técnico de los objetivos de re-trabajo y metas de reducción de fallas repetidas."
+  },
+  {
+    "code": "E4",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO30: Alineación del equipo técnico con los objetivos de control de fallas repetidas dentro de los 30 días."
+  },
+  {
+    "code": "E5",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI REDO SSR: Nivel de apropiación y cumplimiento del indicador REDO SSR (Same Symptom Repeat)."
+  },
+  {
+    "code": "E6",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI GM: Conocimiento y cumplimiento por parte del taller de las métricas de gestión generales (GM)."
+  },
+  {
+    "code": "E7",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Conocimiento de KPI RNPS (Recomendación NPS): Conocimiento y enfoque de los técnicos en el cumplimiento del objetivo de satisfacción del cliente (NPS)."
+  },
+  {
+    "code": "E8",
+    "line": "CE",
+    "category": "Indicadores de Rendimiento (KPIs)",
+    "question": "Registro de la descripción de Reparación y Defectos: Redacción del diagnóstico y acciones técnicas conforme al estándar de calidad exigido."
+  },
+  {
+    "code": "F1",
+    "line": "CE",
+    "category": "Competencias y Documentación",
+    "question": "Plan de Capacitación Activo: Asignación de certificación RA y avance correspondiente en los entrenamientos técnicos."
+  },
+  {
+    "code": "F2",
+    "line": "CE",
+    "category": "Competencias y Documentación",
+    "question": "Descarga y lectura de ESI (GSPN): Disponibilidad de los comunicados del año y conocimiento de los últimos comnicados (ESI) publicados en GSPN."
+  },
+  {
+    "code": "F3",
+    "line": "CE",
+    "category": "Competencias y Documentación",
+    "question": "Manuales de Servicio Actualizados: Disponibilidad física o digital de los manuales de servicio de todos los modelos lanzados en los últimos 12 meses."
+  },
+  {
+    "code": "F4",
+    "line": "CE",
+    "category": "Competencias y Documentación",
+    "question": "Asistencia a Entrenamientos: Participación activa de la plantilla técnica en el plan anual de capacitaciones de la marca."
+  },
+  {
+    "code": "G1",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Seguridad en Almacén: Restricción de acceso físico y control del personal no autorizado al área de almacenamiento de repuestos."
+  },
+  {
+    "code": "G2",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Partes Nuevas: Disposición y orden de repuestos nuevos asegurando su conservación óptima y protección ESD."
+  },
+  {
+    "code": "G3",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Partes Usadas: Segregación, orden y control de repuestos usados a la espera de devolución o disposición."
+  },
+  {
+    "code": "G4",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Embalaje para Retorno: Uso de empaques protectores estandarizados para el envío seguro de partes de devolución a la central."
+  },
+  {
+    "code": "G5",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Documentación de Despacho: Control, archivo y coincidencia de las guías de despacho físicas frente al registro de sistema."
+  },
+  {
+    "code": "G6",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Tiempos de Devolución: Monitoreo del cumplimiento de los plazos reglamentarios para el retorno de componentes."
+  },
+  {
+    "code": "G7",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Devolución Total de Partes: Retorno del 100% de las piezas de scrap y reemplazos (operaciones Out of Warranty / Local Purchase)."
+  },
+  {
+    "code": "G8",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Control de Inventario de Usados: Ausencia de componentes usados retenidos en el taller fuera de la zona autorizada de tránsito de RMA."
+  },
+  {
+    "code": "G9",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Inutilización de Baterías: Verificación de corte físico del cable flexible (flex) en baterías extraídas para evitar su reutilización."
+  },
+  {
+    "code": "G10",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Seguridad en Manejo de Baterías: Cumplimiento de los protocolos de seguridad y manipulación segura para evitar cortocircuitos o incendios con las baterías."
+  },
+  {
+    "code": "G11",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Almacenamiento de Baterías Usadas: Cumplimiento de los protocolos de almacenamiento y manipulación segura para evitar cortocircuitos o incendios.."
+  },
+  {
+    "code": "G12",
+    "line": "CE",
+    "category": "Gestion de Partes",
+    "question": "Frecuencia de Inventario: Periodicidad de la conciliación física de stock contra el inventario registrado en el sistema ERP."
+  },
+  {
+    "code": "H1",
+    "line": "CE",
+    "category": "ECO Repair",
+    "question": "Disponibilidad de Herramientas: Presencia total del herramental de diagnóstico y desarme obligatorio según listado de la marca."
+  },
+  {
+    "code": "H2",
+    "line": "CE",
+    "category": "ECO Repair",
+    "question": "Mantenimiento C20: Limpieza y mantenimiento del herramental de apertura automática C20 siguiendo el cronograma del fabricante."
+  },
+  {
+    "code": "H3",
+    "line": "CE",
+    "category": "ECO Repair",
+    "question": "Alcance de Reparaciones: Capacidad y habilitación operativa del taller para atender servicios tanto dentro (IW) como fuera de garantía (OW)."
+  },
+  {
+    "code": "H4",
+    "line": "CE",
+    "category": "ECO Repair",
+    "question": "Polivalencia en Eco Repair: Disponibilidad de múltiples técnicos certificados en la metodología de reparación sustentable (Eco Repair)."
+  },
+  {
+    "code": "H5",
+    "line": "CE",
+    "category": "ECO Repair",
+    "question": "Control de Consumibles: Registro obligatorio de la fecha de apertura en jeringas de adhesivos, resinas o pastas térmicas para control de vida útil."
+  }
+];
+</script>
+<script>
+// Minimal real XLSX (OOXML/ZIP, store method, no compression) generator - no external deps
+(function() {
+  function crc32(buf) {
+    let c, crcTable = window.__crc32Table;
+    if (!crcTable) {
+      crcTable = [];
+      for (let n = 0; n < 256; n++) {
+        c = n;
+        for (let k = 0; k < 8; k++) c = ((c & 1) ? (0xEDB88320 ^ (c >>> 1)) : (c >>> 1));
+        crcTable[n] = c;
+      }
+      window.__crc32Table = crcTable;
+    }
+    let crc = 0 ^ (-1);
+    for (let i = 0; i < buf.length; i++) crc = (crc >>> 8) ^ crcTable[(crc ^ buf[i]) & 0xFF];
+    return (crc ^ (-1)) >>> 0;
+  }
+
+  function strToBytes(str) {
+    return new TextEncoder().encode(str);
+  }
+
+  function u16(n) { return [n & 0xFF, (n >> 8) & 0xFF]; }
+  function u32(n) { return [n & 0xFF, (n >> 8) & 0xFF, (n >> 16) & 0xFF, (n >> 24) & 0xFF]; }
+
+  function makeZip(files) {
+    // files: [{name, data(Uint8Array)}]
+    let localParts = [], centralParts = [], offset = 0;
+    files.forEach(f => {
+      const nameBytes = strToBytes(f.name);
+      const data = f.data;
+      const crc = crc32(data);
+      const localHeader = [
+        0x50,0x4b,0x03,0x04, 20,0, 0,0, 0,0, 0,0,0,0,
+        ...u32(crc), ...u32(data.length), ...u32(data.length),
+        ...u16(nameBytes.length), ...u16(0)
+      ];
+      const local = new Uint8Array(localHeader.length + nameBytes.length + data.length);
+      local.set(localHeader, 0);
+      local.set(nameBytes, localHeader.length);
+      local.set(data, localHeader.length + nameBytes.length);
+      localParts.push(local);
+
+      const centralHeader = [
+        0x50,0x4b,0x01,0x02, 20,0, 20,0, 0,0, 0,0, 0,0,0,0,
+        ...u32(crc), ...u32(data.length), ...u32(data.length),
+        ...u16(nameBytes.length), ...u16(0), ...u16(0),
+        ...u16(0), ...u16(0), ...u32(0), ...u32(offset)
+      ];
+      const central = new Uint8Array(centralHeader.length + nameBytes.length);
+      central.set(centralHeader, 0);
+      central.set(nameBytes, centralHeader.length);
+      centralParts.push(central);
+
+      offset += local.length;
+    });
+
+    const centralStart = offset;
+    let centralSize = 0;
+    centralParts.forEach(c => centralSize += c.length);
+
+    const eocd = new Uint8Array([
+      0x50,0x4b,0x05,0x06, 0,0, 0,0,
+      ...u16(files.length), ...u16(files.length),
+      ...u32(centralSize), ...u32(centralStart),
+      ...u16(0)
+    ]);
+
+    const totalSize = offset + centralSize + eocd.length;
+    const result = new Uint8Array(totalSize);
+    let pos = 0;
+    localParts.forEach(p => { result.set(p, pos); pos += p.length; });
+    centralParts.forEach(p => { result.set(p, pos); pos += p.length; });
+    result.set(eocd, pos);
+    return result;
+  }
+
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+
+  function colName(idx) {
+    let s = '';
+    idx++;
+    while (idx > 0) {
+      const m = (idx - 1) % 26;
+      s = String.fromCharCode(65 + m) + s;
+      idx = Math.floor((idx - 1) / 26);
+    }
+    return s;
+  }
+
+  function sheetToXml(sheetData) {
+    let rows = '';
+    sheetData.data.forEach((row, r) => {
+      let cells = '';
+      row.forEach((val, c) => {
+        const ref = colName(c) + (r + 1);
+        if (typeof val === 'number') {
+          cells += `<c r="${ref}"><v>${val}</v></c>`;
+        } else {
+          cells += `<c r="${ref}" t="inlineStr"><is><t xml:space="preserve">${esc(val == null ? '' : val)}</t></is></c>`;
+        }
+      });
+      rows += `<row r="${r + 1}">${cells}</row>`;
+    });
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main"><sheetData>${rows}</sheetData></worksheet>`;
+  }
+
+  window.XLSX = {
+    utils: {
+      book_new: () => ({ SheetNames: [], Sheets: {} }),
+      aoa_to_sheet: (data) => ({ data }),
+      book_append_sheet: (wb, ws, name) => {
+        wb.SheetNames.push(name);
+        wb.Sheets[name] = ws;
+      }
+    },
+    writeFile: (wb, filename) => {
+      const files = [];
+      files.push({ name: '[Content_Types].xml', data: strToBytes(
+        `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+<Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+<Default Extension="xml" ContentType="application/xml"/>
+<Override PartName="/xl/workbook.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.main+xml"/>
+${wb.SheetNames.map((n, i) => `<Override PartName="/xl/worksheets/sheet${i+1}.xml" ContentType="application/vnd.openxmlformats-officedocument.spreadsheetml.worksheet+xml"/>`).join('')}
+</Types>`
+      )});
+
+      files.push({ name: '_rels/.rels', data: strToBytes(
+        `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="xl/workbook.xml"/>
+</Relationships>`
+      )});
+
+      files.push({ name: 'xl/workbook.xml', data: strToBytes(
+        `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<workbook xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships">
+<sheets>${wb.SheetNames.map((n, i) => `<sheet name="${esc(n)}" sheetId="${i+1}" r:id="rId${i+1}"/>`).join('')}</sheets>
+</workbook>`
+      )});
+
+      files.push({ name: 'xl/_rels/workbook.xml.rels', data: strToBytes(
+        `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+${wb.SheetNames.map((n, i) => `<Relationship Id="rId${i+1}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/worksheet" Target="worksheets/sheet${i+1}.xml"/>`).join('')}
+</Relationships>`
+      )});
+
+      wb.SheetNames.forEach((name, i) => {
+        files.push({ name: `xl/worksheets/sheet${i+1}.xml`, data: strToBytes(sheetToXml(wb.Sheets[name])) });
+      });
+
+      const zipBytes = makeZip(files);
+      const blob = new Blob([zipBytes], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+      const link = document.createElement('a');
+      const url = URL.createObjectURL(blob);
+      link.setAttribute('href', url);
+      link.setAttribute('download', filename);
+      link.style.visibility = 'hidden';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    }
+  };
+})();
+
+</script>
+  
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; background: #f5f5f5; color: #333; font-size: 18px; }
+    .screen { display: none; min-height: 100vh; background: white; }
+    .screen.active { display: flex; flex-direction: column; }
+    .header { padding: 20px; background: #1428a0; color: white; }
+    .header h1 { font-size: 24px; margin-bottom: 10px; }
+    .header p { font-size: 14px; opacity: 0.9; }
+    .progress { height: 4px; background: #ddd; margin-top: 10px; }
+    .progress-bar { height: 100%; background: #00a8e8; width: 0%; transition: width 0.3s; }
+    .content { flex: 1; padding: 20px; overflow-y: auto; }
+    .form-group { margin-bottom: 20px; }
+    .form-label { display: block; font-weight: 600; margin-bottom: 8px; font-size: 16px; }
+    .form-input, .form-select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; color: #000; background: #fff; }
+    .form-select { color-scheme: light; }
+    .form-select option { color: #000 !important; background: #fff !important; }
+    .form-input:focus, .form-select:focus { outline: none; border-color: #1428a0; box-shadow: 0 0 0 3px rgba(20, 40, 160, 0.1); }
+    .btn-group { display: flex; gap: 10px; padding: 20px; border-top: 1px solid #eee; position: sticky; bottom: 0; background: white; box-shadow: 0 -2px 8px rgba(0,0,0,0.08); z-index: 10; }
+    .btn { flex: 1; padding: 12px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s; }
+    .btn-primary { background: #1428a0; color: white; }
+    .btn-primary:hover { background: #0f1f70; }
+    .btn-secondary { background: #f0f0f0; color: #333; border: 1px solid #ddd; }
+    .btn-secondary:hover { background: #e0e0e0; }
+    .btn-danger { background: #d32f2f; color: white; }
+    .btn-success { background: #388e3c; color: white; }
+    .btn-group-inline { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+    .btn-inline { padding: 12px; border: 2px solid #ddd; background: white; border-radius: 4px; cursor: pointer; font-weight: 600; transition: all 0.2s; }
+    .btn-inline.selected { background: #1428a0; color: white; border-color: #1428a0; }
+    .control-item { padding: 20px; margin-bottom: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; }
+    .control-code { font-size: 12px; color: #666; text-transform: uppercase; font-weight: 600; }
+    .control-title { font-size: 16px; font-weight: 600; margin: 8px 0; }
+    .control-question { font-size: 16px; color: #555; margin-bottom: 15px; line-height: 1.5; }
+    .rating-buttons { display: flex; gap: 8px; margin-bottom: 15px; }
+    .rating-btn { flex: 1; padding: 12px; border: 2px solid #ddd; background: white; border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.2s; font-size: 13px; }
+    .rating-btn:hover { border-color: #1428a0; }
+    .rating-btn.r-1.selected { background: #d32f2f; color: white; border-color: #d32f2f; }
+    .rating-btn.r0.selected { background: #f57c00; color: white; border-color: #f57c00; }
+    .rating-btn.r1.selected { background: #fbc02d; color: #333; border-color: #fbc02d; }
+    .rating-btn.r2.selected { background: #388e3c; color: white; border-color: #388e3c; }
+    .chart-container { margin: 15px 0; padding: 15px; background: white; border-radius: 4px; border: 1px solid #ddd; }
+    .chart-bar { display: flex; align-items: center; margin-bottom: 12px; gap: 10px; }
+    .chart-label { width: 120px; font-size: 13px; font-weight: 500; }
+    .chart-progress { flex: 1; height: 24px; background: #f0f0f0; border-radius: 3px; overflow: hidden; }
+    .chart-fill { height: 100%; background: linear-gradient(90deg, #d32f2f 0%, #fbc02d 50%, #388e3c 100%); transition: width 0.3s; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: white; font-size: 12px; font-weight: bold; }ht: 600; }
+    .textarea { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px; font-family: inherit; resize: vertical; min-height: 80px; }
+    .checkbox-group { display: flex; align-items: center; gap: 10px; padding: 12px; background: #f0f0f0; border-radius: 4px; margin: 15px 0; }
+    .checkbox-group input { width: 20px; height: 20px; }
+    .tabs { display: flex; gap: 10px; padding: 15px 20px; border-bottom: 1px solid #eee; overflow-x: auto; }
+    .tab { padding: 8px 15px; border: none; background: transparent; cursor: pointer; border-bottom: 3px solid transparent; font-weight: 600; font-size: 16px; color: #666; transition: all 0.2s; }
+    .tab.active { color: #1428a0; border-bottom-color: #1428a0; }
+    .summary-box { padding: 15px; background: #f9f9f9; border: 1px solid #ddd; border-radius: 4px; margin-bottom: 15px; }
+    .summary-title { font-weight: 600; margin-bottom: 10px; }
+    .summary-item { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid #eee; font-size: 16px; }
+    .summary-item:last-child { border-bottom: none; }
+    .score-badge { display: inline-block; padding: 10px 15px; background: #1428a0; color: white; border-radius: 4px; font-size: 18px; font-weight: 600; }
+    .alert { padding: 15px; margin-bottom: 15px; border-radius: 4px; }
+    .alert-error { background: #ffebee; color: #c62828; border: 1px solid #ef5350; }
+    .alert-success { background: #e8f5e9; color: #2e7d32; border: 1px solid #4caf50; }
+    @media (max-width: 600px) {
+      .header { padding: 15px; }
+      .content { padding: 15px; }
+      .btn-group { padding: 15px; }
+    }
+  </style>
+<script>
+// Simple PDF export - uses hidden iframe to avoid popup blockers
+window.html2pdf = () => {
+  let options = {};
+  let htmlString = '';
+  const api = {
+    set: (opts) => {
+      options = opts;
+      return api;
+    },
+    fromString: (html) => {
+      htmlString = html;
+      return api;
+    },
+    save: () => {
+      let iframe = document.getElementById('__pdf-print-frame');
+      if (iframe) iframe.remove();
+      iframe = document.createElement('iframe');
+      iframe.id = '__pdf-print-frame';
+      iframe.style.position = 'fixed';
+      iframe.style.right = '0';
+      iframe.style.bottom = '0';
+      iframe.style.width = '800px';
+      iframe.style.height = '1100px';
+      iframe.style.border = '0';
+      iframe.style.opacity = '0';
+      iframe.style.pointerEvents = 'none';
+      iframe.style.zIndex = '-1';
+      document.body.appendChild(iframe);
+
+      const doc = iframe.contentWindow.document;
+      doc.open();
+      doc.write(`
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <title>${options.filename || 'document'}</title>
+          <style>
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { font-family: Arial, sans-serif; padding: 20px; color: #333; line-height: 1.6; }
+            h1 { font-size: 24px; margin-bottom: 15px; }
+            h2 { font-size: 18px; margin-top: 20px; margin-bottom: 10px; color: #555; }
+            p { margin: 8px 0; }
+            strong { font-weight: bold; }
+            @media print {
+              body { padding: 10mm; }
+            }
+          </style>
+        </head>
+        <body>
+          ${htmlString}
+        </body>
+        </html>
+      `);
+      doc.close();
+
+      iframe.onload = () => {
+        iframe.contentWindow.focus();
+        iframe.contentWindow.print();
+      };
+      // Fallback in case onload doesn't fire (some browsers with document.write)
+      setTimeout(() => {
+        try {
+          iframe.contentWindow.focus();
+          iframe.contentWindow.print();
+        } catch (e) {}
+      }, 400);
+    }
+  };
+  return api;
+};
+
+</script>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#1428a0">
+  <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="40" fill="white" opacity="0.9"/>
+    <text x="50" y="60" font-size="40" font-weight="bold" text-anchor="middle" fill="#1428a0">✓</text>
+  </svg>
+</template>
+
+<!-- SCREEN 1: INICIO -->
+<div class="screen active" id="screen-start">
+  <div class="header">
+    <h1>Nueva Auditoría</h1>
+    <p>Auditoría de Calidad - Centros de Servicio Autorizados</p>
+  </div>
+  
+  <div class="content">
+    <div class="form-group">
+      <label class="form-label">Línea de Producto</label>
+      <div class="btn-group-inline">
+        <button class="btn-inline" onclick="selectLine('MX', this);">📱 Mobile (MX)</button>
+        <button class="btn-inline" onclick="selectLine('CE', this);">🖥️ Consumer Electronics</button>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Centro de Servicio (ASC)</label>
+      <select id="asc-select" style="display: none;"><option value="">Selecciona un ASC...</option></select>
+      <div style="position: relative;">
+        <div id="asc-trigger" class="form-select" onclick="toggleAscPanel()" style="cursor: pointer; color: #000; background: #fff; display: flex; justify-content: space-between; align-items: center;"><span id="asc-label" style="color: #000;">Selecciona un ASC...</span><span style="color: #000;">▾</span></div>
+        <div id="asc-panel" style="display: none; position: absolute; left: 0; right: 0; top: 100%; z-index: 20; max-height: 320px; overflow-y: auto; background: #fff; border: 1px solid #1428a0; border-radius: 4px; box-shadow: 0 6px 16px rgba(0,0,0,0.15);"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Nombre del Auditor</label>
+      <input type="text" id="auditor-name" class="form-input" placeholder="Tu nombre completo">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Fecha de la Auditoría</label>
+      <input type="date" id="audit-date" class="form-input">
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">¿El ASC tiene activo el proceso ECO Repair?</label>
+      <div style="display: flex; gap: 8px;">
+        <button type="button" id="eco-yes" class="btn btn-secondary" onclick="setEcoRepair(true);">Sí</button>
+        <button type="button" id="eco-no" class="btn btn-secondary" onclick="setEcoRepair(false);">No</button>
+      </div>
+    </div>
+
+    <div id="error-msg" class="alert alert-error" style="display: none;"></div>
+  </div>
+
+  <div class="btn-group">
+    <button class="btn btn-primary" onclick="initAudit();">Iniciar Auditoría →</button>
+  </div>
+</div>
+
+<!-- SCREEN 2: CHECKLIST -->
+<div class="screen" id="screen-checklist">
+  <div class="header">
+    <h1 id="cat-name">Control ESD</h1>
+    <p id="header-info">ASC • Auditor • Progreso</p>
+    <div class="progress">
+      <div class="progress-bar" id="progress-bar"></div>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabs"></div>
+
+  <div class="content" id="items-container" style="background-color: #000000;"></div>
+
+  <div class="btn-group">
+    <button class="btn btn-secondary" onclick="prevCategory();">← Atrás</button>
+    <button class="btn btn-primary" onclick="nextCategory();">Siguiente →</button>
+  </div>
+</div>
+
+<!-- SCREEN 3: RESUMEN -->
+<div class="screen" id="screen-summary">
+  <div class="header">
+    <h1>Resumen de Auditoría</h1>
+    <p>Revisa los resultados antes de exportar</p>
+  </div>
+
+  <div class="content" style="background-color: #000000;">
+    <div class="summary-box">
+      <div class="summary-title">Información</div>
+      <div class="summary-item"><span>Centro:</span> <span id="sum-asc">-</span></div>
+      <div class="summary-item"><span>Auditor:</span> <span id="sum-auditor">-</span></div>
+      <div class="summary-item"><span>Fecha:</span> <span id="sum-date">-</span></div>
+    </div>
+
+    <div id="category-scores"></div>
+    
+    <div class="summary-box">
+      <div class="summary-title">Puntaje Final</div>
+      <div style="display: flex; align-items: center; justify-content: center; gap: 30px; padding: 20px; flex-wrap: wrap;">
+        <div id="final-pie" style="width: 160px; height: 160px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: conic-gradient(#d32f2f 0%, #d32f2f 33%, #fbc02d 33%, #fbc02d 67%, #388e3c 67%, #388e3c 100%);">
+          <div style="width: 120px; height: 120px; border-radius: 50%; background: #fff; display: flex; align-items: center; justify-content: center;">
+            <span class="score-badge" id="final-score" style="background: none; padding: 0; color: #1428a0; font-size: 32px; font-weight: bold;">0%</span>
+          </div>
+        </div>
+        <div id="final-counts" style="font-size: 15px; min-width: 180px;"></div>
+      </div>
+    </div>
+
+    <div id="critical-items" style="display: none;"></div>
+  </div>
+
+  <div class="btn-group" style="background-color: #000000;">
+    <button class="btn btn-secondary" onclick="backToChecklist();">← Editar</button>
+    <button class="btn btn-success" onclick="exportExcel();" style="background-color: #2D5225;">📊 Descargar Excel</button>
+    <button class="btn btn-danger" onclick="exportPDF();" style="background-color: #873F3F;">📄 Descargar PDF</button>
+  </div>
+</div>
+
+<input type="file" id="photo-input" style="display: none;" accept="image/*" onchange="addPhoto(event)">
+
+<script>
+window.__EMBEDDED_ASC__ = [{"ascName":"ACOSTA PEREZ JOSE CARLOS","linea":"VD"},{"ascName":"ANTONETTI CLAUDIA MARIA","linea":"VD"},{"ascName":"AYALA SUCURSAL","linea":"DA"},{"ascName":"BANDER JORGE MATIAS","linea":"VD"},{"ascName":"BARIL CLAUDIO GUILLERMO","linea":"MX"},{"ascName":"BERTELLO MARCELO DANIEL","linea":"DA"},{"ascName":"BOUSIGUEZ EDUARDO HECTOR ASC Mar del Plata","linea":"VD/MX"},{"ascName":"BROK PEPA ARIEL","linea":"VD"},{"ascName":"Carlos Alfredo Fernandez","linea":"DA"},{"ascName":"CLICER ESTECO","linea":"DA"},{"ascName":"De La Torre","linea":"DA"},{"ascName":"DEFIER VILLA MARIA","linea":"MX"},{"ascName":"DEGIOVANNI CARLOS ALBERTO","linea":"VD"},{"ascName":"DEPETRINI GABRIEL Y DEPETRINI ALEJA","linea":"DA"},{"ascName":"ECHENIQUE JULIANA","linea":"CE"},{"ascName":"ELECTRICAM CABA","linea":"VD"},{"ascName":"ELECTRICAM SRL","linea":"VD"},{"ascName":"ELECTRONICA CEJO CARLOS ARIEL FOUCE","linea":"VD"},{"ascName":"F.S SRL LOPEZ LUIS ALBERTO","linea":"VD"},{"ascName":"FABIANO ENVIOS","linea":"CE"},{"ascName":"FARFAN ALFREDO","linea":"DA"},{"ascName":"FRECHERO SANTIAGO BERNARDO","linea":"DA"},{"ascName":"FRIGUZ REFRIGERACION","linea":"DA"},{"ascName":"GALLEGO RICARDO (UNIPERSONAL)","linea":"MX"},{"ascName":"GANDINI GUSTAVO ADOLFOOMICRON","linea":"VD"},{"ascName":"GARCIA CARLOS ALBERTO","linea":"CE"},{"ascName":"GARCIA SANCHEZ JOSE MIGUEL","linea":"DA"},{"ascName":"GILMOUR DIEGO ADRIAN","linea":"VD"},{"ascName":"GMRA MIRLOG","linea":"MX"},{"ascName":"GMRA SES AVELLANEDA","linea":"MX"},{"ascName":"GMRA SES NEUQUEN","linea":"MX"},{"ascName":"GMRA VEDIA","linea":"MX"},{"ascName":"GUSTAVO ANGEL ZAYA","linea":"VD"},{"ascName":"HAGOS JOSE GONZALEZ","linea":"DA"},{"ascName":"HIDALGO LEONARDO RUBEN","linea":"CE/MX"},{"ascName":"HR Service","linea":"DA"},{"ascName":"ING. RAUL E. BARCHINI SRL","linea":"MX"},{"ascName":"Ismael Jaime Servicio Técnico.","linea":"DA"},{"ascName":"JARA LUIS MARIANO","linea":"DA"},{"ascName":"JIMENEZ GAMALIEL SEBASTIAN","linea":"MX"},{"ascName":"LARRAZABAL JORGE ALBERTO","linea":"DA"},{"ascName":"LLOPIS EDUARDO AGUSTIN","linea":"DA"},{"ascName":"LOPEZ PATRICIA ISABEL GBA","linea":"DA"},{"ascName":"LOPEZ RAMIRO","linea":"VD"},{"ascName":"LOS HERMANOS","linea":"DA"},{"ascName":"LURO SERVICE SRL","linea":"DA"},{"ascName":"MAG RESISTENCIA","linea":"MX"},{"ascName":"MALISANI RAFAEL CESAR","linea":"DA"},{"ascName":"MARCELO ARIEL MILOCCO","linea":"VD"},{"ascName":"MARCHESINI QUARANTA","linea":"DA"},{"ascName":"MARTI NICOLAS SUAREZ","linea":"VD/MX"},{"ascName":"MC ZONA NORTE MARTINEZ","linea":"CE"},{"ascName":"MENISALE JUAN MANUEL","linea":"VD"},{"ascName":"MOLINARI SUSANA BEATRIZ","linea":"VD"},{"ascName":"MONGE MAURICIO JUAN NORBERTO ","linea":"DA"},{"ascName":"MONTICELLI EDUARDO JORGE","linea":"VD"},{"ascName":"NESTOR LUIS ACOSTA","linea":"DA"},{"ascName":"NETAMA CALLE SALTA","linea":"MX"},{"ascName":"NETAMA ENVÍOS","linea":"VD"},{"ascName":"Netama ROSARIO 2","linea":"MX"},{"ascName":"NETAMA VENADO TUERTO","linea":"MX"},{"ascName":"OFFICIAL TECHNICAL SERVICE SRL","linea":"MX"},{"ascName":"Ogas Emanuel Moises","linea":"DA"},{"ascName":"ON SERVICE SRL","linea":"CE/MX"},{"ascName":"PALMERA BUSINESS SRL","linea":"VD"},{"ascName":"PavonST bahia blanca","linea":"DA"},{"ascName":"PEREYRA ANGEL ENVIOS","linea":"DA"},{"ascName":"PEREYRA RUBEN HORACIO","linea":"DA/SAC"},{"ascName":"PST SERVICE S,A,S","linea":"CE/MX"},{"ascName":"PST SERVICE SAN LUIS","linea":"CE/MX"},{"ascName":"RAUTO Juan Jose","linea":"DA"},{"ascName":"RODRIGUEZ RAUL ALBERTO","linea":"DA"},{"ascName":"ROGACZEWSKI ESTELA ALEJANDRA","linea":"DA"},{"ascName":"ROJAS ALEXIS GABRIEL","linea":"DA"},{"ascName":"ROMERO CLAUDIO DANIEL","linea":"VD"},{"ascName":"ROMERO DIEGO GASTON","linea":"CE"},{"ascName":"Salvia Caseros","linea":"CE"},{"ascName":"SANCHEZ JUAN IGNACIO","linea":"DA"},{"ascName":"SCI MERLO","linea":"MX"},{"ascName":"SCI RAMOS","linea":"MX"},{"ascName":"SCI Rosario","linea":"MX"},{"ascName":"SCI SAN MIGUEL","linea":"MX"},{"ascName":"SEGOVIA LEONARDO ARGENTINO","linea":"CE"},{"ascName":"Servigad S.A.","linea":"CE"},{"ascName":"SERVIWEST SAN MARTIN","linea":"VD"},{"ascName":"SERVOTRONIC (MORON)","linea":"VD"},{"ascName":"SES _Mendoza Plaza","linea":"MX"},{"ascName":"SES ABASTO","linea":"MX"},{"ascName":"SES Alto Rosario","linea":"MX"},{"ascName":"SES ARMENIA","linea":"MX"},{"ascName":"SES Belgrano","linea":"MX"},{"ascName":"SES Comodoro Rivadavia","linea":"MX"},{"ascName":"SES La Plata","linea":"MX"},{"ascName":"SES Lomas","linea":"MX"},{"ascName":"SES Mar del Plata","linea":"MX"},{"ascName":"SES Nuevo Centro","linea":"MX"},{"ascName":"SES Palmares","linea":"MX"},{"ascName":"SES Pilar","linea":"MX"},{"ascName":"SES Plaza Oeste shopping","linea":"MX"},{"ascName":"SES Quilmes Factory","linea":"MX"},{"ascName":"SES RIO GRANDE","linea":"MX"},{"ascName":"SES Salta","linea":"MX"},{"ascName":"SES Tucuman","linea":"MX"},{"ascName":"SES Unicenter","linea":"MX"},{"ascName":"SES Ushuaia","linea":"MX"},{"ascName":"SILVESTRO JOSE OSVALDO","linea":"VD"},{"ascName":"SIMON DELGADO ENVIOS","linea":"DA"},{"ascName":"Simon Mar del Plata","linea":"DA"},{"ascName":"Simon Pergamino","linea":"DA"},{"ascName":"SOP-TEC SRL","linea":"VD"},{"ascName":"SOSA MORENO MARIA PRiSCILLA","linea":"MX"},{"ascName":"SOTEC - Tucuman","linea":"DA"},{"ascName":"SOTEC CRC","linea":"MX"},{"ascName":"SOTEC S.A.","linea":"VD/MX"},{"ascName":"SOTEC Salta","linea":"DA"},{"ascName":"SOTEC SAN JUAN","linea":"CE/MX"},{"ascName":"SOTO ANDREA VIVIANA","linea":"DA"},{"ascName":"SPIGA NESTOR MARIA","linea":"VD"},{"ascName":"T.V. COLOR LOMAS de Mario Alonso","linea":"VD/MX"},{"ascName":"Technics Almagro","linea":"MX"},{"ascName":"Technics CABA","linea":"VD/MX"},{"ascName":"TECHNICS LA PLATA","linea":"CE/MX"},{"ascName":"TOIW MARIO ERNESTO","linea":"VD"},{"ascName":"TriFix Lomas","linea":"DA"},{"ascName":"TriFix San Martin","linea":"DA"},{"ascName":"UNITERMICA SRL","linea":"DA"},{"ascName":"VELAZQUEZ CINTIA PAMELA","linea":"VD"},{"ascName":"VIDANA GERMAN SANTIAGO RAMON","linea":"VD"},{"ascName":"Visuar","linea":"DA"},{"ascName":"WALKER CARLOS ALBERTO","linea":"DA"},{"ascName":"Zuliani Adolfo Esteban","linea":"CE"},{"ascName":"SEGOVIA SUCURSAL","linea":"CE"},{"ascName":"MELO JOSE CEFERINO","linea":"DA"},{"ascName":"SES Alto Comahue","linea":"MX"},{"ascName":"FUHR NELSON RAUL","linea":"DA"},{"ascName":"FRANCO JORGE MIGUEL","linea":"DA"},{"ascName":"CATCA REFRIGERACION S.A.S.","linea":"DA"},{"ascName":"DDK SERVICIOS SRL","linea":"DA"},{"ascName":"SES Callao","linea":"MX"}];
+</script>
+<script>
+let data = { asc: '', auditor: '', date: '', line: '', items: {} };
+let allControls = [], allAsc = [], allCategories = [], currentCat = 0;
+
+async function fetchJsonSmart(filename) {
+  // Intentar datos embebidos primero
+  if (filename === 'controls_data.json' && window.__EMBEDDED_CONTROLS__) {
+    return window.__EMBEDDED_CONTROLS__;
+  }
+  if (filename === 'asc_data.json' && window.__EMBEDDED_ASC__) {
+    return window.__EMBEDDED_ASC__;
+  }
+  return [];
+}
+
+async function loadControls() {
+  try {
+    if (window.__EMBEDDED_CONTROLS__?.length > 0) {
+      allControls = window.__EMBEDDED_CONTROLS__;
+      console.log('✓ Controls loaded from embedded:', allControls.length);
+      return;
+    }
+    allControls = await fetchJsonSmart('controls_data.json');
+    console.log('✓ Controls loaded:', allControls.length);
+  } catch (e) {
+    console.error('Error loading controls:', e);
+    allControls = [];
+  }
+}
+
+async function loadAscData() {
+  try {
+    if (window.__EMBEDDED_ASC__?.length > 0) {
+      allAsc = window.__EMBEDDED_ASC__;
+      console.log('✓ ASC data loaded from embedded:', allAsc.length);
+      return;
+    }
+    allAsc = await fetchJsonSmart('asc_data.json');
+    console.log('✓ ASC data loaded:', allAsc.length);
+  } catch (e) {
+    console.error('Error loading ASC data:', e);
+    allAsc = [];
+  }
+}
+
+function selectLine(line, btn) {
+  document.querySelectorAll('.btn-inline').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  data.line = line;
+
+  const select = document.getElementById('asc-select');
+
+  if (!allAsc || allAsc.length === 0) {
+    select.innerHTML = '<option value="">Cargando ASC...</option>';
+    loadAscData().then(() => populateAscSelect(line));
+    return;
+  }
+  populateAscSelect(line);
+}
+
+function populateAscSelect(line) {
+  const filtered = allAsc.filter(a => {
+    if (line === 'MX') {
+      return a.linea.includes('MX');
+    } else if (line === 'CE') {
+      return a.linea.includes('CE') || a.linea.includes('DA') || a.linea.includes('SAC') || a.linea.includes('VD');
+    }
+    return false;
+  });
+
+  const unique = [...new Set(filtered.map(a => a.ascName))].sort();
+
+  const select = document.getElementById('asc-select');
+  select.innerHTML = '<option value="">Selecciona un ASC...</option>';
+  unique.forEach(name => {
+    const opt = document.createElement('option');
+    opt.style.color = '#000';
+    opt.style.background = '#fff';
+    opt.value = name;
+    opt.textContent = name;
+    select.appendChild(opt);
+  });
+  const panel = document.getElementById('asc-panel');
+  panel.innerHTML = '';
+  document.getElementById('asc-label').textContent = 'Selecciona un ASC...';
+  unique.forEach(name => {
+    const d = document.createElement('div');
+    d.textContent = name;
+    d.style.cssText = 'padding: 10px 12px; color: #000; background: #fff; cursor: pointer; font-size: 15px; border-bottom: 1px solid #f0f0f0;';
+    d.onmouseenter = () => { d.style.background = '#1428a0'; d.style.color = '#fff'; };
+    d.onmouseleave = () => { d.style.background = '#fff'; d.style.color = '#000'; };
+    d.onclick = () => selectAsc(name);
+    panel.appendChild(d);
+  });
+}
+
+function toggleAscPanel() {
+  const p = document.getElementById('asc-panel');
+  p.style.display = p.style.display === 'none' ? 'block' : 'none';
+}
+function selectAsc(name) {
+  document.getElementById('asc-select').value = name;
+  document.getElementById('asc-label').textContent = name;
+  document.getElementById('asc-panel').style.display = 'none';
+}
+document.addEventListener('click', e => {
+  if (!e.target.closest('#asc-trigger, #asc-panel')) document.getElementById('asc-panel').style.display = 'none';
+});
+
+const STATE_KEY = 'auditState';
+let _auditDb = null, storageWarned = false;
+function openAuditDb() {
+  if (!_auditDb) _auditDb = new Promise((res, rej) => {
+    const r = indexedDB.open('auditAppDB', 1);
+    r.onupgradeneeded = () => r.result.createObjectStore('kv');
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  });
+  return _auditDb;
+}
+function kvSet(k, v) {
+  return openAuditDb().then(db => new Promise((res, rej) => {
+    const t = db.transaction('kv', 'readwrite');
+    t.objectStore('kv').put(v, k);
+    t.oncomplete = res;
+    t.onerror = () => rej(t.error);
+  }));
+}
+function kvGet(k) {
+  return openAuditDb().then(db => new Promise((res, rej) => {
+    const r = db.transaction('kv').objectStore('kv').get(k);
+    r.onsuccess = () => res(r.result);
+    r.onerror = () => rej(r.error);
+  }));
+}
+function kvDel(k) {
+  return openAuditDb().then(db => new Promise((res, rej) => {
+    const t = db.transaction('kv', 'readwrite');
+    t.objectStore('kv').delete(k);
+    t.oncomplete = res;
+    t.onerror = () => rej(t.error);
+  }));
+}
+function persistState() {
+  kvSet(STATE_KEY, { data, allCategories, currentCat }).catch(e => {
+    console.warn('No se pudo guardar', e);
+    if (!storageWarned) { storageWarned = true; alert('No se pudo guardar el avance en el navegador. Descargue el Excel o PDF para respaldar.'); }
+  });
+}
+function updateObs(cat, idx, value) {
+  data.items[cat][idx].observation = value;
+  persistState();
+}
+function removePhoto(cat, idx, pIdx) {
+  if (!confirm('¿Eliminar esta evidencia?')) return;
+  saveCurrentCategory();
+  data.items[cat][idx].photos.splice(pIdx, 1);
+  persistState();
+  renderCategory(currentCat);
+}
+function restoreSavedAudit(s) {
+  data = s.data;
+  allCategories = s.allCategories;
+  currentCat = s.currentCat || 0;
+  document.getElementById('resume-banner')?.remove();
+  showScreen('screen-checklist');
+  renderCategory(currentCat);
+}
+function discardSavedAudit() {
+  kvDel(STATE_KEY);
+  document.getElementById('resume-banner')?.remove();
+}
+function showResumeBanner(s) {
+  const start = document.getElementById('screen-start');
+  const b = document.createElement('div');
+  b.id = 'resume-banner';
+  b.style.cssText = 'margin: 0 0 16px; padding: 14px; border: 1px solid #1428A0; border-radius: 8px; background: #eef1fb; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between;';
+  const txt = document.createElement('span');
+  txt.style.cssText = 'font-size: 14px;';
+  txt.textContent = 'Auditoría en curso guardada: ' + s.data.asc + ' (' + s.data.date + ')';
+  const btns = document.createElement('div');
+  btns.style.cssText = 'display: flex; gap: 8px;';
+  const ok = document.createElement('button');
+  ok.className = 'btn btn-primary';
+  ok.textContent = 'Continuar';
+  ok.onclick = () => restoreSavedAudit(s);
+  const no = document.createElement('button');
+  no.className = 'btn btn-secondary';
+  no.textContent = 'Descartar';
+  no.onclick = discardSavedAudit;
+  btns.append(ok, no);
+  b.append(txt, btns);
+  start.insertBefore(b, start.children[1] || null);
+}
+document.addEventListener('DOMContentLoaded', () => {
+  kvGet(STATE_KEY).then(s => { if (s && s.data && s.data.asc) showResumeBanner(s); }).catch(e => console.warn(e));
+});
+
+function setEcoRepair(v) {
+  data.ecoRepair = v;
+  document.getElementById('eco-yes').className = 'btn ' + (v ? 'btn-primary' : 'btn-secondary');
+  document.getElementById('eco-no').className = 'btn ' + (v ? 'btn-secondary' : 'btn-primary');
+  document.getElementById('error-msg').style.display = 'none';
+}
+
+function initAudit() {
+  const asc = document.getElementById('asc-select').value;
+  const auditor = document.getElementById('auditor-name').value;
+  const date = document.getElementById('audit-date').value;
+  const msg = document.getElementById('error-msg');
+
+  if (!asc || !auditor || !date || !data.line || typeof data.ecoRepair !== 'boolean') {
+    msg.textContent = '⚠️ Completa todos los campos';
+    msg.style.display = 'block';
+    return;
+  }
+
+  data.asc = asc;
+  data.auditor = auditor;
+  data.date = date;
+
+  // Filtrar controles por línea
+  // ECO Repair solo aplica si el ASC lo tiene activo
+  const filtered = allControls.filter(c => c.line === data.line && (data.ecoRepair || c.category !== 'ECO Repair'));
+  
+  // Agrupar por categoría
+  allCategories = [...new Set(filtered.map(c => c.category))].sort();
+  data.items = {};
+
+  allCategories.forEach(cat => {
+    data.items[cat] = {};
+    const catControls = filtered.filter(c => c.category === cat);
+    catControls.forEach((ctrl, idx) => {
+      data.items[cat][idx] = { control: ctrl, rating: 0, observation: '', critical: false, photos: [] };
+    });
+  });
+
+  currentCat = 0;
+  showScreen('screen-checklist');
+  renderCategory(0);
+  persistState();
+}
+
+function renderCategory(idx) {
+  const cat = allCategories[idx];
+  document.getElementById('cat-name').textContent = cat;
+  document.getElementById('header-info').textContent = `${data.asc} • ${data.auditor} • ${Math.round((idx + 1) / allCategories.length * 100)}%`;
+  document.getElementById('progress-bar').style.width = (idx + 1) / allCategories.length * 100 + '%';
+
+  const tabs = document.getElementById('tabs');
+  tabs.innerHTML = '';
+  allCategories.forEach((c, i) => {
+    const tab = document.createElement('button');
+    tab.className = 'tab' + (i === idx ? ' active' : '');
+    tab.textContent = c;
+    tab.onclick = () => { saveCurrentCategory(); currentCat = i; renderCategory(i); };
+    tabs.appendChild(tab);
+  });
+
+  const container = document.getElementById('items-container');
+  container.innerHTML = '';
+
+  Object.entries(data.items[cat]).forEach(([itemIdx, itemData]) => {
+    const ctrl = itemData.control;
+    const item = document.createElement('div');
+    item.className = 'control-item';
+    item.innerHTML = `
+      <div class="control-code">${ctrl.code}</div>
+      <div class="control-title">${ctrl.category}</div>
+      <div class="control-question">${ctrl.question || ''}</div>
+      
+      <div>
+        <strong style="font-size: 14px;">Evaluación:</strong>
+        <div class="rating-buttons">
+          ${[-1,0,1,2].map(r => {
+            const labels = {'-1':'Afecta','0':'No Cumple','1':'Parcial','2':'Cumple'};
+            return `<button class="rating-btn r${r} ${itemData.rating === r ? 'selected' : ''}" 
+              onclick="setRating('${cat}', ${itemIdx}, ${r});">${labels[String(r)]}</button>`;
+          }).join('')}
+        </div>
+      </div>
+
+      <div style="margin: 15px 0;">
+        <strong style="font-size: 16px;">Observaciones:</strong>
+        <textarea class="textarea" id="obs-${cat}-${itemIdx}" oninput="updateObs('${cat}', ${itemIdx}, this.value);" style="width: 100%; min-height: 60px; box-sizing: border-box;">${itemData.observation}</textarea>
+        <button onclick="startAudioTranscription(this)" style="margin-top: 8px; padding: 10px 20px; background: #2196F3; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px;">🎤 Transcribir Audio</button>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="crit-${cat}-${itemIdx}" ${itemData.critical ? 'checked' : ''} 
+          onchange="setCritical('${cat}', ${itemIdx}, this.checked)">
+        <label for="crit-${cat}-${itemIdx}">Marcar como crítico</label>
+      </div>
+
+      <div>
+        <button class="btn btn-secondary" style="width: 100%; margin-bottom: 10px;" 
+          onclick="addPhotoClick('${cat}', ${itemIdx});">📷 Agregar evidencia</button>
+        <div id="photos-${cat}-${itemIdx}" style="display: flex; gap: 8px; flex-wrap: wrap;">
+          ${itemData.photos.length === 0 ? '<span style="color: #999; font-size: 12px;">Sin fotos</span>' : 
+            itemData.photos.map((p, i) => {
+              const photoData = typeof p === 'string' ? p : p.data;
+              return `<div style="position: relative;"><img src="${photoData}" style="width: 60px; height: 60px; border-radius: 4px; object-fit: cover; display: block;"><button type="button" title="Eliminar evidencia" onclick="removePhoto('${cat}', ${itemIdx}, ${i});" style="position: absolute; top: -6px; right: -6px; width: 20px; height: 20px; border-radius: 50%; border: none; background: #c62828; color: white; font-size: 14px; line-height: 20px; cursor: pointer; padding: 0;">×</button></div>`;
+            }).join('')}
+        </div>
+      </div>
+    `;
+    container.appendChild(item);
+  });
+}
+
+function setRating(cat, idx, rating) {
+  saveCurrentCategory();
+  data.items[cat][idx].rating = Number(rating);
+  renderCategory(currentCat);
+}
+
+function setCritical(cat, idx, value) {
+  data.items[cat][idx].critical = value;
+  persistState();
+}
+
+function addPhotoClick(cat, idx) {
+  saveCurrentCategory();
+  document.getElementById('photo-input').dataset.cat = cat;
+  document.getElementById('photo-input').dataset.idx = idx;
+  document.getElementById('photo-input').click();
+}
+
+function addPhoto(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const cat = event.target.dataset.cat;
+    const idx = parseInt(event.target.dataset.idx);
+    const ta = document.getElementById(`obs-${cat}-${idx}`);
+    if (ta) data.items[cat][idx].observation = ta.value;
+    data.items[cat][idx].photos.push({
+      data: e.target.result,
+      name: file.name
+    });
+    persistState();
+    renderCategory(currentCat);
+  };
+  reader.readAsDataURL(file);
+  event.target.value = '';
+}
+
+function nextCategory() {
+  saveCurrentCategory();
+  if (currentCat < allCategories.length - 1) {
+    currentCat++;
+    renderCategory(currentCat);
+  } else {
+    showSummary();
+  }
+}
+
+function saveCurrentCategory() {
+  const cat = allCategories[currentCat];
+  if (cat && data.items[cat]) {
+    Object.entries(data.items[cat]).forEach(([idx]) => {
+      const textarea = document.getElementById(`obs-${cat}-${idx}`);
+      if (textarea) data.items[cat][idx].observation = textarea.value;
+    });
+  }
+  persistState();
+}
+
+function prevCategory() {
+  saveCurrentCategory();
+  if (currentCat > 0) {
+    currentCat--;
+    renderCategory(currentCat);
+  }
+}
+
+function getGradientColor(percent) {
+  // Rojo (0%) -> Naranja (50%) -> Verde (100%)
+  if (percent <= 50) {
+    const ratio = percent / 50;
+    const r = Math.round(211 - (211 - 255) * ratio);
+    const g = Math.round(47 + (152 - 47) * ratio);
+    const b = Math.round(47 + (45 - 47) * ratio);
+    return `rgb(${r}, ${g}, ${b})`;
+  } else {
+    const ratio = (percent - 50) / 50;
+    const r = Math.round(255 - (255 - 56) * ratio);
+    const g = Math.round(152 + (136 - 152) * ratio);
+    const b = Math.round(45 + (60 - 45) * ratio);
+    return `rgb(${r}, ${g}, ${b})`;
+  }
+}
+
+function percentToColor(pct) {
+  const hue = Math.max(0, Math.min(100, pct)) * 1.2; // 0=red, 100=green(120)
+  return `hsl(${hue}, 70%, 42%)`;
+}
+
+const VECTOR_ORDER = ['ESD', 'Calidad de Reparación', 'Certificación de Personal', 'Almacén y KPIs'];
+const VECTOR_META = {
+  'ESD': {
+    causa: 'Coordinación ESD, señalización de EPA, piso disipativo, muñequeras y vestimenta conductiva.',
+    impacto: 'El incumplimiento eleva el riesgo de daño oculto a componentes electrónicos, generando fallas repetidas (REDO) que no son visibles en la reparación inicial.'
+  },
+  'Calidad de Reparación': {
+    causa: 'Proceso de atención, diagnóstico (IQC/OQC), ejecución técnica, herramientas homologadas y orden en el puesto de trabajo.',
+    impacto: 'Determina directamente la tasa de retrabajo, el tiempo de ciclo de reparación (TAT) y la satisfacción del cliente (NPS).'
+  },
+  'Certificación de Personal': {
+    causa: 'Capacitación vigente, documentación técnica actualizada y conocimiento de comunicados oficiales (ESI/GSPN).',
+    impacto: 'Personal sin certificación o desactualizado incrementa el riesgo de diagnósticos incorrectos y reparaciones fuera del estándar de marca.'
+  },
+  'Almacén y KPIs': {
+    causa: 'Gestión, trazabilidad y devolución de repuestos, junto con el conocimiento de indicadores de gestión (IQC, MP, REDO, GM, NPS).',
+    impacto: 'Las deficiencias generan sobrecostos de inventario, incumplimiento de SLA de devolución y falta de foco operativo en las métricas exigidas por la marca.'
+  }
+};
+
+function mapToVector(cat) {
+  if (/ESD/i.test(cat)) return 'ESD';
+  if (/Competencia|Documentaci/i.test(cat)) return 'Certificación de Personal';
+  if (/Indicador|KPI|Gesti[oó]n de Partes/i.test(cat)) return 'Almacén y KPIs';
+  return 'Calidad de Reparación';
+}
+
+function getStatusMeta(pct) {
+  if (pct >= 90) return { label: 'Óptimo', color: '#1a9850' };
+  if (pct >= 75) return { label: 'Aceptable', color: '#66bd63' };
+  if (pct >= 50) return { label: 'Atención', color: '#f4a72e' };
+  return { label: 'Crítico', color: '#d32f2f' };
+}
+
+function ratingLabelOf(r) {
+  return ({ '-1': 'Afecta', '0': 'No Cumple', '1': 'Parcial', '2': 'Cumple' })[String(r)] || 'Sin evaluar';
+}
+
+function showSummary() {
+  saveCurrentCategory();
+  showScreen('screen-summary');
+  
+  document.getElementById('sum-asc').textContent = data.asc;
+  document.getElementById('sum-auditor').textContent = data.auditor;
+  document.getElementById('sum-date').textContent = data.date;
+
+  let totalPoints = 0, maxPoints = 0;
+  const catScores = document.getElementById('category-scores');
+  let catScoresHTML = '<div class="summary-box"><div class="summary-title">Puntajes por Categoría</div><div class="chart-container">';
+
+  const catStats = {};
+  Object.keys(data.items).sort().forEach(catName => {
+    const catData = data.items[catName];
+    if (!catData) return;
+
+    const items = Object.values(catData);
+    let catPoints = 0, catMax = items.length * 2;
+    let counts = {'-1': 0, '0': 0, '1': 0, '2': 0};
+    
+    items.forEach(i => {
+      catPoints += (i.rating || 0);
+      counts[String(i.rating || 0)]++;
+    });
+
+    const catPercent = catMax > 0 ? Math.round(catPoints / catMax * 100) : 0;
+    catStats[catName] = { percent: catPercent, counts, total: items.length, points: catPoints, maxPoints: catMax };
+    totalPoints += catPoints;
+    maxPoints += catMax;
+
+    catScoresHTML += `<div class="chart-bar">
+      <div class="chart-label">${catName}</div>
+      <div class="chart-progress">
+        <div class="chart-fill" style="width: ${catPercent}%; background: ${getGradientColor(catPercent)};">${catPercent}%</div>
+      </div>
+    </div>`;
+  });
+
+  catScoresHTML += '</div>';
+  
+  // Estadísticas por categoría
+  catScoresHTML += '<div style="margin-top: 20px; font-size: 14px;"><strong>Resumen por Categoría:</strong><table style="width: 100%; border-collapse: collapse; margin-top: 10px;"><tr style="background: #f0f0f0;"><th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Categoría</th><th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Revisados</th><th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Afecta</th><th style="border: 1px solid #ddd; padding: 8px; text-align: center;">No Cumple</th><th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Parcial</th><th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Cumple</th></tr>';
+  
+  Object.entries(catStats).forEach(([cat, stats]) => {
+    catScoresHTML += `<tr><td style="border: 1px solid #ddd; padding: 8px;"><strong>${cat}</strong></td><td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${stats.total}</td><td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${stats.counts['-1']}</td><td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${stats.counts['0']}</td><td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${stats.counts['1']}</td><td style="border: 1px solid #ddd; padding: 8px; text-align: center;">${stats.counts['2']}</td></tr>`;
+  });
+  
+  catScoresHTML += '</table></div></div>';
+  catScores.innerHTML = catScoresHTML;
+
+  const finalPercent = maxPoints > 0 ? Math.round(totalPoints / maxPoints * 100) : 0;
+  document.getElementById('final-score').textContent = finalPercent + '%';
+  const pieColor = getGradientColor(finalPercent);
+  const gradStop = finalPercent;
+  document.getElementById('final-pie').style.background = `conic-gradient(${pieColor} 0 ${gradStop}%, #e0e0e0 ${gradStop}% 100%)`;
+
+  // Totales por calificación en toda la auditoría
+  const totalCounts = {'-1': 0, '0': 0, '1': 0, '2': 0};
+  Object.values(catStats).forEach(s => {
+    totalCounts['-1'] += s.counts['-1'];
+    totalCounts['0'] += s.counts['0'];
+    totalCounts['1'] += s.counts['1'];
+    totalCounts['2'] += s.counts['2'];
+  });
+  document.getElementById('final-counts').innerHTML = `
+    <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee;"><span>Afecta:</span><strong>${totalCounts['-1']}</strong></div>
+    <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee;"><span>No Cumple:</span><strong>${totalCounts['0']}</strong></div>
+    <div style="display: flex; justify-content: space-between; padding: 6px 0; border-bottom: 1px solid #eee;"><span>Parcial:</span><strong>${totalCounts['1']}</strong></div>
+    <div style="display: flex; justify-content: space-between; padding: 6px 0;"><span>Cumple:</span><strong>${totalCounts['2']}</strong></div>
+  `;
+
+  const critical = [];
+  Object.entries(data.items).forEach(([cat, items]) => {
+    Object.entries(items).forEach(([idx, item]) => {
+      if (item.critical || item.rating === -1 || item.rating === 0 || item.rating === 1) {
+        critical.push({ cat, item });
+      }
+    });
+  });
+
+  if (critical.length > 0) {
+    const section = document.getElementById('critical-items');
+    section.style.display = 'block';
+    let criticalHTML = '<div class="summary-box"><div class="summary-title">⚠️ Hallazgos Críticos</div><table style="width: 100%; border-collapse: collapse; font-size: 14px;"><tr style="background: #f0f0f0;"><th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Código</th><th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Descripción</th><th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Evaluación</th><th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Observación</th><th style="border: 1px solid #ddd; padding: 10px; text-align: left;">Evidencia</th></tr>';
+    critical.forEach(c => {
+      const ratingLabels = {'-1':'Afecta','0':'No Cumple','1':'Parcial','2':'Cumple'};
+      const ratingLabel = ratingLabels[String(c.item.rating)] || 'Desconocido';
+      const photosHTML = c.item.photos.length > 0 ? 
+        c.item.photos.map((p, i) => `<img src="${p}" style="width: 40px; height: 40px; border-radius: 4px; object-fit: cover; margin-right: 5px;">`).join('') : 
+        '<span style="color: #999;">-</span>';
+      criticalHTML += `<tr style="background: #fffbf0;"><td style="border: 1px solid #ddd; padding: 10px;"><strong>${c.item.control.code}</strong></td><td style="border: 1px solid #ddd; padding: 10px;">${c.item.control.question}</td><td style="border: 1px solid #ddd; padding: 10px;"><strong>${ratingLabel}</strong></td><td style="border: 1px solid #ddd; padding: 10px;">${c.item.observation || '-'}</td><td style="border: 1px solid #ddd; padding: 10px; display: flex; gap: 5px;">${photosHTML}</td></tr>`;
+    });
+    criticalHTML += '</table></div>';
+    section.innerHTML = criticalHTML;
+  } else {
+    document.getElementById('critical-items').style.display = 'none';
+  }
+}
+
+function backToChecklist() {
+  showScreen('screen-checklist');
+  renderCategory(currentCat);
+}
+
+function startAudioTranscription(btn) {
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+    alert('Tu navegador no soporta grabación de audio');
+    return;
+  }
+  
+  let mediaRecorder, audioChunks = [];
+  navigator.mediaDevices.getUserMedia({ audio: true })
+    .then(stream => {
+      mediaRecorder = new MediaRecorder(stream);
+      mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+      mediaRecorder.onstop = () => {
+        const obs = document.getElementById('observation-input');
+        obs.value = (obs.value ? obs.value + '\n' : '') + '[Audio: ' + new Date().toLocaleTimeString() + ']';
+        stream.getTracks().forEach(t => t.stop());
+      };
+      mediaRecorder.start();
+      btn.textContent = '⏹️ Detener';
+      btn.disabled = true;
+      setTimeout(() => {
+        mediaRecorder.stop();
+        btn.textContent = '🎤 Transcribir Audio';
+        btn.disabled = false;
+      }, 5000);
+    })
+    .catch(err => {
+      const errMsg = err.name === 'NotAllowedError' ? 'Permiso denegado. Verifica que el navegador tenga permiso de micrófono en la configuración del sistema.' : err.message;
+      alert('Error al acceder al micrófono: ' + errMsg);
+    });
+}
+
+function exportExcel() {
+  if (typeof XLSX === 'undefined' || !window.XLSX) {
+    alert('Error: librería XLSX no cargada');
+    return;
+  }
+  if (!data.asc) {
+    alert('Por favor completa el formulario antes de exportar');
+    return;
+  }
+
+  const lineLabel = data.line === 'MX' ? 'Mobile' : 'Consumer Electronics';
+  const wb = XLSX.utils.book_new();
+
+  // --- Cálculo por categoría y por vector estratégico ---
+  let totalPoints = 0, totalMax = 0;
+  const catRows = [];
+  const vectorAgg = {};
+  VECTOR_ORDER.forEach(v => vectorAgg[v] = { points: 0, max: 0, cats: [] });
+
+  allCategories.forEach(cat => {
+    const items = Object.values(data.items[cat]);
+    let catPoints = 0, catMax = items.length * 2;
+    let counts = { '-1': 0, '0': 0, '1': 0, '2': 0 };
+    items.forEach(i => { catPoints += (i.rating || 0); counts[String(i.rating || 0)]++; });
+    const pct = catMax > 0 ? Math.round(catPoints / catMax * 100) : 0;
+    const vector = mapToVector(cat);
+    catRows.push({ cat, vector, pct, total: items.length, counts });
+    vectorAgg[vector].points += catPoints;
+    vectorAgg[vector].max += catMax;
+    vectorAgg[vector].cats.push(cat);
+    totalPoints += catPoints;
+    totalMax += catMax;
+  });
+
+  const finalPct = totalMax > 0 ? Math.round(totalPoints / totalMax * 100) : 0;
+  const finalStatus = getStatusMeta(finalPct);
+
+  // --- Hoja 1: Resumen Ejecutivo ---
+  const summary = [
+    ['INFORME EJECUTIVO DE AUDITORÍA', ''],
+    ['', ''],
+    ['Centro de Servicio (ASC)', data.asc],
+    ['Auditor', data.auditor],
+    ['Fecha de Auditoría', data.date],
+    ['Línea de Producto', lineLabel],
+    ['', ''],
+    ['Puntaje General', finalPct + '%'],
+    ['Estado General', finalStatus.label],
+    ['Puntos de Control Evaluados', totalMax / 2],
+    ['', ''],
+    ['RESUMEN POR VECTOR ESTRATÉGICO', ''],
+    ['Vector Estratégico', 'Categorías Incluidas', 'Puntaje (%)', 'Estado'],
+  ];
+  VECTOR_ORDER.forEach(v => {
+    const agg = vectorAgg[v];
+    const pct = agg.max > 0 ? Math.round(agg.points / agg.max * 100) : 0;
+    summary.push([v, agg.cats.join(', '), pct + '%', getStatusMeta(pct).label]);
+  });
+
+  const ws1 = XLSX.utils.aoa_to_sheet(summary);
+  ws1['!cols'] = [{ wch: 28 }, { wch: 55 }, { wch: 14 }, { wch: 14 }];
+  XLSX.utils.book_append_sheet(wb, ws1, 'Resumen Ejecutivo');
+
+  // --- Hoja 2: Categorías ---
+  const catSheet = [
+    ['Categoría', 'Vector Estratégico', 'Puntaje (%)', 'Controles Evaluados', 'Afecta (-1)', 'No Cumple (0)', 'Parcial (1)', 'Cumple (2)', 'Estado'],
+  ];
+  catRows.forEach(r => {
+    catSheet.push([r.cat, r.vector, r.pct, r.total, r.counts['-1'], r.counts['0'], r.counts['1'], r.counts['2'], getStatusMeta(r.pct).label]);
+  });
+  const ws2 = XLSX.utils.aoa_to_sheet(catSheet);
+  ws2['!cols'] = [{ wch: 32 }, { wch: 24 }, { wch: 12 }, { wch: 18 }, { wch: 12 }, { wch: 14 }, { wch: 12 }, { wch: 12 }, { wch: 12 }];
+  XLSX.utils.book_append_sheet(wb, ws2, 'Categorías');
+
+  // --- Hoja 3: Hallazgos Críticos ---
+  const critical = [];
+  allCategories.forEach(cat => {
+    Object.values(data.items[cat]).forEach(item => {
+      if (item.critical || item.rating === -1 || item.rating === 0 || item.rating === 1) {
+        critical.push([item.control.code, cat, mapToVector(cat), item.control.question, ratingLabelOf(item.rating), item.observation || '']);
+      }
+    });
+  });
+  const critSheet = [['Código', 'Categoría', 'Vector Estratégico', 'Control', 'Evaluación', 'Observación']];
+  critSheet.push(...critical);
+  const ws3 = XLSX.utils.aoa_to_sheet(critSheet);
+  ws3['!cols'] = [{ wch: 10 }, { wch: 26 }, { wch: 22 }, { wch: 55 }, { wch: 14 }, { wch: 40 }];
+  XLSX.utils.book_append_sheet(wb, ws3, 'Hallazgos Críticos');
+
+  // --- Hoja 4: Detalle Completo ---
+  const detail = [['Código', 'Categoría', 'Vector Estratégico', 'Control', 'Evaluación', 'Puntos', 'Marcado Crítico', 'Observación']];
+  allCategories.forEach(cat => {
+    Object.values(data.items[cat]).forEach(item => {
+      detail.push([item.control.code, cat, mapToVector(cat), item.control.question, ratingLabelOf(item.rating), item.rating ?? 0, item.critical ? 'Sí' : 'No', item.observation || '']);
+    });
+  });
+  const ws4 = XLSX.utils.aoa_to_sheet(detail);
+  ws4['!cols'] = [{ wch: 10 }, { wch: 26 }, { wch: 22 }, { wch: 55 }, { wch: 14 }, { wch: 9 }, { wch: 14 }, { wch: 40 }];
+  XLSX.utils.book_append_sheet(wb, ws4, 'Detalle Completo');
+
+  // --- Hoja 5: Evidencias ---
+  const evidences = [['Código de Control', 'Categoría', 'Control', 'Observación', 'Ruta de Evidencia (Foto)']];
+  allCategories.forEach(cat => {
+    Object.values(data.items[cat]).forEach(item => {
+      if (item.photos && item.photos.length > 0) {
+        item.photos.forEach((photo, idx) => {
+          const fileName = photo.name || `Foto_${item.control.code}_${idx + 1}`;
+          evidences.push([item.control.code, cat, item.control.question, item.observation || '', fileName]);
+        });
+      }
+    });
+  });
+  
+  if (evidences.length > 1) {
+    const ws5 = XLSX.utils.aoa_to_sheet(evidences);
+    ws5['!cols'] = [{ wch: 12 }, { wch: 26 }, { wch: 55 }, { wch: 40 }, { wch: 20 }];
+    XLSX.utils.book_append_sheet(wb, ws5, 'Evidencias');
+  }
+
+  XLSX.writeFile(wb, `Auditoria_${data.asc.replace(/\s+/g, '_')}_${data.date}.xlsx`);
+}
+
+function exportPDF() {
+  if (typeof html2pdf === 'undefined') {
+    alert('Error: librería html2pdf no cargada');
+    return;
+  }
+
+  const lineLabel = data.line === 'MX' ? 'Mobile' : 'Consumer Electronics';
+
+  let totalPoints = 0, maxPoints = 0;
+  const catRows = [];
+  const vectorAgg = {};
+  VECTOR_ORDER.forEach(v => vectorAgg[v] = { points: 0, max: 0, cats: [] });
+
+  allCategories.forEach(cat => {
+    const items = Object.values(data.items[cat]);
+    let catPoints = 0, catMax = items.length * 2;
+    let counts = {'-1': 0, '0': 0, '1': 0, '2': 0};
+    items.forEach(i => {
+      catPoints += (i.rating || 0);
+      counts[String(i.rating || 0)]++;
+    });
+    const pct = catMax > 0 ? Math.round(catPoints / catMax * 100) : 0;
+    const vector = mapToVector(cat);
+    catRows.push({ cat, vector, pct, total: items.length, counts });
+    vectorAgg[vector].points += catPoints;
+    vectorAgg[vector].max += catMax;
+    vectorAgg[vector].cats.push({ cat, pct });
+    totalPoints += catPoints;
+    maxPoints += catMax;
+  });
+  const totalControls = allCategories.reduce((a,c)=>a+Object.values(data.items[c]).length,0);
+  const finalPct = maxPoints > 0 ? Math.round(totalPoints / maxPoints * 100) : 0;
+  const finalStatus = getStatusMeta(finalPct);
+
+  const critical = [];
+  allCategories.forEach(cat => {
+    Object.entries(data.items[cat]).forEach(([idx, item]) => {
+      if (item.critical || item.rating === -1 || item.rating === 0 || item.rating === 1) {
+        critical.push({ cat, item });
+      }
+    });
+  });
+  critical.sort((a, b) => (a.item.rating || 0) - (b.item.rating || 0));
+
+  const bar = (pct, height) => `
+    <div style="flex: 1; height: ${height || 10}px; background: #e9ecf5; border-radius: 6px; overflow: hidden;">
+      <div style="width: ${Math.max(pct, 2)}%; height: 100%; background: ${getGradientColor(pct)}; border-radius: 6px;"></div>
+    </div>`;
+
+  const kpiCard = (label, value, sub, color) => `
+    <div style="flex: 1; background: #fff; border: 1px solid #e3e6ef; border-radius: 10px; padding: 16px 18px;">
+      <div style="font-size: 10.5px; color: #6b7280; text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600;">${label}</div>
+      <div style="font-size: 28px; font-weight: 800; color: ${color || '#1428A0'}; margin-top: 6px;">${value}</div>
+      <div style="font-size: 11px; color: #8a8f9c; margin-top: 4px;">${sub}</div>
+    </div>`;
+
+  let html = `
+    <div style="font-family: 'Segoe UI', Arial, sans-serif; color: #1a1a2e;">
+      <div style="background: #1428A0; padding: 26px 34px; display: flex; justify-content: space-between; align-items: flex-start;">
+        <div>
+          <div style="color: #ffffff; font-size: 13px; font-weight: 800; letter-spacing: 2px;">SAMSUNG</div>
+          <div style="color: #aab8f5; font-size: 10.5px; letter-spacing: 1.5px; margin-top: 2px; text-transform: uppercase;">Auditoría de Calidad · Centro de Servicio</div>
+          <div style="color: #ffffff; font-size: 21px; font-weight: 800; margin-top: 14px;">Informe Ejecutivo de Auditoría</div>
+        </div>
+        <div style="text-align: right; color: #ffffff; font-size: 11px; line-height: 1.8; min-width: 180px;">
+          <div><span style="color: #aab8f5;">ASC:</span> <b>${data.asc}</b></div>
+          <div><span style="color: #aab8f5;">Auditor:</span> <b>${data.auditor}</b></div>
+          <div><span style="color: #aab8f5;">Fecha:</span> <b>${data.date}</b></div>
+          <div><span style="color: #aab8f5;">Línea:</span> <b>${lineLabel}</b></div>
+        </div>
+      </div>
+
+      <div style="padding: 24px 34px 8px;">
+        <div style="display: flex; gap: 12px; margin-bottom: 20px;">
+          ${kpiCard('Puntaje General', finalPct + '%', `sobre ${maxPoints} puntos posibles`, getGradientColor(finalPct))}
+          ${kpiCard('Estado General', finalStatus.label, 'clasificación consolidada', finalStatus.color)}
+          ${kpiCard('Controles Evaluados', totalControls, `en ${allCategories.length} categorías`, '#1428A0')}
+          ${kpiCard('Hallazgos Críticos', critical.length, critical.length > 0 ? 'requieren acción' : 'sin pendientes', critical.length > 0 ? '#d32f2f' : '#1a9850')}
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 26px;">
+          <div style="font-size: 11px; color: #6b7280; white-space: nowrap;">Cumplimiento global</div>
+          ${bar(finalPct, 14)}
+          <div style="font-size: 12px; font-weight: 700; color: ${getGradientColor(finalPct)}; white-space: nowrap;">${finalPct}%</div>
+        </div>
+
+        <div style="font-size: 15px; font-weight: 800; color: #1428A0; margin-bottom: 4px;">Vectores Estratégicos</div>
+        <div style="font-size: 11px; color: #6b7280; margin-bottom: 12px;">Los ${totalControls} puntos de control se agrupan en 4 vectores que explican la causa y el impacto operativo del resultado.</div>
+        <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 26px;">
+          ${VECTOR_ORDER.map(v => {
+            const agg = vectorAgg[v];
+            const pct = agg.max > 0 ? Math.round(agg.points / agg.max * 100) : 0;
+            const st = getStatusMeta(pct);
+            const meta = VECTOR_META[v];
+            return `
+            <div style="border: 1px solid #e3e6ef; border-radius: 10px; padding: 14px 16px;">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px;">
+                <div style="font-size: 13px; font-weight: 700; color: #1a1a2e;">${v}</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span style="font-size: 10px; font-weight: 700; color: ${st.color}; background: ${st.color}1a; padding: 2px 8px; border-radius: 10px;">${st.label}</span>
+                  <span style="font-size: 14px; font-weight: 800; color: ${getGradientColor(pct)};">${pct}%</span>
+                </div>
+              </div>
+              <div style="margin-bottom: 8px;">${bar(pct, 8)}</div>
+              <div style="font-size: 10.5px; color: #6b7280; line-height: 1.5;"><b style="color:#4b5066;">Qué mide:</b> ${meta.causa}</div>
+              <div style="font-size: 10.5px; color: #6b7280; line-height: 1.5; margin-top: 3px;"><b style="color:#4b5066;">Impacto si falla:</b> ${meta.impacto}</div>
+            </div>`;
+          }).join('')}
+        </div>
+
+        <div style="font-size: 15px; font-weight: 800; color: #1428A0; margin-bottom: 10px;">Puntajes por Categoría</div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px; margin-bottom: 26px;">
+          <tr style="background: #f0f2fa;">
+            <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700;">Categoría</th>
+            <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700;">Vector</th>
+            <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700; width: 130px;">Cumplimiento</th>
+            <th style="padding: 8px; text-align: center; color: #4b5066; font-weight: 700;">Estado</th>
+          </tr>
+          ${catRows.map(r => {
+            const st = getStatusMeta(r.pct);
+            return `
+          <tr style="border-bottom: 1px solid #eef0f6;">
+            <td style="padding: 8px;">${r.cat}</td>
+            <td style="padding: 8px; color: #6b7280;">${r.vector}</td>
+            <td style="padding: 8px;">
+              <div style="display: flex; align-items: center; gap: 8px;">
+                ${bar(r.pct, 8)}
+                <span style="font-weight: 700; color: ${getGradientColor(r.pct)}; width: 32px; text-align: right;">${r.pct}%</span>
+              </div>
+            </td>
+            <td style="padding: 8px; text-align: center;"><span style="font-size: 10px; font-weight: 700; color: ${st.color}; background: ${st.color}1a; padding: 2px 8px; border-radius: 10px;">${st.label}</span></td>
+          </tr>`;
+          }).join('')}
+        </table>
+
+        <div style="font-size: 15px; font-weight: 800; color: #1428A0; margin-bottom: 10px;">Hallazgos Críticos</div>`;
+
+  if (critical.length > 0) {
+    html += `<table style="width: 100%; border-collapse: collapse; font-size: 10.5px; margin-bottom: 20px;">
+      <tr style="background: #f0f2fa;">
+        <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700;">Código</th>
+        <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700;">Control</th>
+        <th style="padding: 8px; text-align: center; color: #4b5066; font-weight: 700;">Evaluación</th>
+        <th style="padding: 8px; text-align: left; color: #4b5066; font-weight: 700;">Observación</th>
+      </tr>
+      ${critical.map(c => {
+        const r = c.item.rating;
+        const sevColor = (r === -1 || r === 0) ? '#d32f2f' : '#e07a1f';
+        const sevBg = (r === -1 || r === 0) ? '#fdeeee' : '#fdf3e9';
+        return `
+      <tr style="background: ${sevBg}; border-bottom: 3px solid #fff;">
+        <td style="padding: 8px; font-weight: 700; border-left: 3px solid ${sevColor};">${c.item.control.code}</td>
+        <td style="padding: 8px;">${c.item.control.question}</td>
+        <td style="padding: 8px; text-align: center;"><span style="font-weight: 700; color: ${sevColor};">${ratingLabelOf(r)}</span></td>
+        <td style="padding: 8px; color: #4b5066;">${c.item.observation || '—'}</td>
+      </tr>`;
+      }).join('')}
+    </table>`;
+  } else {
+    html += `<p style="font-size: 12px; color: #6b7280;">Sin hallazgos críticos registrados.</p>`;
+  }
+
+  // Colectar todas las evidencias
+  const allEvidences = [];
+  allCategories.forEach(cat => {
+    Object.entries(data.items[cat]).forEach(([idx, item]) => {
+      if (item.photos && item.photos.length > 0) {
+        item.photos.forEach((photoObj, photoIdx) => {
+          allEvidences.push({
+            code: item.control.code,
+            cat: cat,
+            question: item.control.question,
+            photo: typeof photoObj === 'string' ? photoObj : photoObj.data,
+            name: typeof photoObj === 'string' ? '' : (photoObj.name || ''),
+            observation: item.observation || ''
+          });
+        });
+      }
+    });
+  });
+
+  if (allEvidences.length > 0) {
+    html += `
+        <div style="page-break-before: always; margin-top: 20px; padding-top: 20px; border-top: 2px solid #1428A0;">
+          <div style="font-size: 16px; font-weight: 800; color: #1428A0; margin-bottom: 14px;">Evidencias Fotográficas</div>
+          <div style="font-size: 11px; color: #6b7280; margin-bottom: 16px;">Registro de fotografías asociadas a los puntos de control evaluados.</div>`;
+    
+    allEvidences.forEach((ev, idx) => {
+      html += `
+          <div style="margin-bottom: 16px; border: 1px solid #e3e6ef; border-radius: 8px; padding: 12px; background: #fafbfd;">
+            <div style="font-size: 11px; font-weight: 700; color: #1428A0; margin-bottom: 6px;">
+              <span style="background: #1428A0; color: white; padding: 2px 8px; border-radius: 4px; display: inline-block;">Código: ${ev.code}</span>
+            </div>
+            <div style="font-size: 10.5px; color: #4b5066; margin-bottom: 4px;"><b>Control:</b> ${ev.question}</div>
+            <div style="font-size: 10.5px; color: #6b7280; margin-bottom: 10px;"><b>Observación:</b> ${ev.observation || '(sin observación)'}</div>
+            <div style="text-align: center;">
+              <img src="${ev.photo}" style="max-width: 100%; max-height: 300px; border-radius: 6px; border: 1px solid #ddd;" />
+            </div>
+            <div style="font-size: 9px; color: #999; margin-top: 8px; text-align: center;">Archivo: ${ev.name || 'Sin nombre'}</div>
+          </div>`;
+    });
+    
+    html += `
+        </div>`;
+  }
+
+  html += `
+        <div style="margin-top: 20px; padding-top: 14px; border-top: 1px solid #eef0f6; font-size: 9.5px; color: #a0a4b0; display: flex; justify-content: space-between;">
+          <span>Informe generado automáticamente · ${new Date().toLocaleDateString()}</span>
+          <span>Documento confidencial de uso interno</span>
+        </div>
+      </div>
+    </div>`;
+
+  html2pdf().set({
+    margin: 10,
+    filename: `Reporte_${data.asc.replace(/\s+/g, '_')}_${data.date}.pdf`,
+    html2canvas: { scale: 2 },
+    jsPDF: { orientation: 'portrait', unit: 'mm', format: 'a4' }
+  }).fromString(html).save();
+}
+
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+loadControls();
+loadAscData();
+
+// Fallback: si loadAscData es async y no termina, intentar populate inmediatamente
+setTimeout(() => {
+  if (allAsc.length === 0 && window.__EMBEDDED_ASC__) {
+    allAsc = window.__EMBEDDED_ASC__;
+  }
+  if (allControls.length === 0 && window.__EMBEDDED_CONTROLS__) {
+    allControls = window.__EMBEDDED_CONTROLS__;
+  }
+}, 100);
+
+document.getElementById('audit-date').valueAsDate = new Date();
+</script>
+
+</body>
+</html>
